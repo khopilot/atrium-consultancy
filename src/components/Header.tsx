@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Home, Users, Briefcase, Grid, MessageCircle, Menu } from 'lucide-react'
+import { Home, Users, Briefcase, Grid, MessageCircle, Menu, Globe } from 'lucide-react'
 
 interface HeaderProps {
   setCurrentPage: (page: string) => void
@@ -9,6 +9,8 @@ const Header: React.FC<HeaderProps> = ({ setCurrentPage }) => {
   const [activePage, setActivePage] = useState('home')
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [language, setLanguage] = useState('en')
+  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +26,11 @@ const Header: React.FC<HeaderProps> = ({ setCurrentPage }) => {
     setIsMenuOpen(false)
   }
 
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'zh' : 'en')
+    setIsLanguageMenuOpen(false)
+  }
+
   return (
     <>
       {/* Desktop Navigation */}
@@ -33,13 +40,21 @@ const Header: React.FC<HeaderProps> = ({ setCurrentPage }) => {
                          border border-black backdrop-blur-sm bg-opacity-90 shadow-md
                          ${isScrolled ? 'p-2' : 'py-3 px-6'}`}>
           {isScrolled ? (
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50"
-              aria-label="Toggle menu"
-            >
-              <Menu size={24} />
-            </button>
+            <div className="flex items-center justify-between">
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50"
+                aria-label="Toggle menu"
+              >
+                <Menu size={24} />
+              </button>
+              <LanguageSelector 
+                language={language} 
+                setLanguage={setLanguage} 
+                isOpen={isLanguageMenuOpen}
+                setIsOpen={setIsLanguageMenuOpen}
+              />
+            </div>
           ) : (
             <ul className="flex justify-between items-center">
               <NavItem icon={<Home />} text="Home" onClick={() => handleNavigation('home')} isActive={activePage === 'home'} />
@@ -47,6 +62,12 @@ const Header: React.FC<HeaderProps> = ({ setCurrentPage }) => {
               <NavItem icon={<Briefcase />} text="Services" onClick={() => handleNavigation('services')} isActive={activePage === 'services'} />
               <NavItem icon={<Grid />} text="Projects" onClick={() => handleNavigation('projects')} isActive={activePage === 'projects'} />
               <NavItem icon={<MessageCircle />} text="Contact" onClick={() => handleNavigation('contact')} isActive={activePage === 'contact'} />
+              <LanguageSelector 
+                language={language} 
+                setLanguage={setLanguage} 
+                isOpen={isLanguageMenuOpen}
+                setIsOpen={setIsLanguageMenuOpen}
+              />
             </ul>
           )}
         </nav>
@@ -69,6 +90,12 @@ const Header: React.FC<HeaderProps> = ({ setCurrentPage }) => {
           <MobileNavItem icon={<Briefcase size={24} />} onClick={() => handleNavigation('services')} isActive={activePage === 'services'} label="Services" />
           <MobileNavItem icon={<Grid size={24} />} onClick={() => handleNavigation('projects')} isActive={activePage === 'projects'} label="Projects" />
           <MobileNavItem icon={<MessageCircle size={24} />} onClick={() => handleNavigation('contact')} isActive={activePage === 'contact'} label="Contact" />
+          <MobileNavItem 
+            icon={<Globe size={24} />} 
+            onClick={toggleLanguage} 
+            isActive={false} 
+            label={language === 'en' ? 'English' : '中文'} 
+          />
         </ul>
       </nav>
     </>
@@ -125,6 +152,43 @@ const MobileNavItem: React.FC<MobileNavItemProps> = ({ icon, onClick, isActive, 
         {icon}
       </button>
     </li>
+  )
+}
+
+interface LanguageSelectorProps {
+  language: string
+  setLanguage: (lang: string) => void
+  isOpen: boolean
+  setIsOpen: (isOpen: boolean) => void
+}
+
+const LanguageSelector: React.FC<LanguageSelectorProps> = ({ language, setLanguage, isOpen, setIsOpen }) => {
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center px-3 py-2 rounded-full transition duration-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50"
+      >
+        <Globe size={18} />
+        <span className="ml-2 text-sm font-medium">{language === 'en' ? 'EN' : '中文'}</span>
+      </button>
+      {isOpen && (
+        <div className="absolute right-0 mt-2 py-2 w-24 bg-white rounded-md shadow-xl z-20 border border-black">
+          <button
+            onClick={() => { setLanguage('en'); setIsOpen(false); }}
+            className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+          >
+            English
+          </button>
+          <button
+            onClick={() => { setLanguage('zh'); setIsOpen(false); }}
+            className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+          >
+            中文
+          </button>
+        </div>
+      )}
+    </div>
   )
 }
 

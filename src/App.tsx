@@ -7,7 +7,7 @@ import Contact from './components/Contact'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import About from './components/About'
 import Blog from './components/Blog'
-import Gallery from './components/Gallery'
+import Projects from './components/Projects'
 
 function App() {
   const [currentPage, setCurrentPage] = React.useState('home')
@@ -26,8 +26,8 @@ function App() {
         return <About />
       case 'blog':
         return <Blog />
-      case 'gallery':
-        return <Gallery />
+      case 'projects':
+        return <Projects />
       default:
         return <Home />
     }

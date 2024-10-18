@@ -1,24 +1,81 @@
 import React from 'react'
 import { Briefcase, FileSearch, Globe, Building, TrendingUp, Users, ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 
-const InvestmentOpportunities: React.FC = () => {
+const Services: React.FC = () => {
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative h-screen flex items-center justify-center">
-        <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" alt="Modern cityscape" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black opacity-50"></div>
-        </div>
-        
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl md:text-6xl font-semibold mb-6">Investment Opportunities</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
-            Unlock the potential of South Asian markets with our expert guidance and comprehensive support
-          </p>
-        </div>
-      </div>
+      <motion.section 
+        className="pt-32 pb-16"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="container mx-auto px-4">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12">Our Services</h1>
+          
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-white rounded-lg overflow-hidden shadow-lg mb-12"
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" 
+                alt="ATRIUM CONSULTANCY Services" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6 bg-gray-100">
+                <p className="font-serif text-xl text-center text-gray-800">
+                  At ATRIUM CONSULTANCY LTD, we offer a suite of bespoke services designed to navigate the complex landscape of Southeast Asian investments. Our offerings are meticulously crafted to meet the exacting standards of our elite clientele, providing unparalleled access and expertise in one of the world's most dynamic economic regions.
+                </p>
+              </div>
+            </motion.div>
 
+            <div className="prose prose-lg max-w-none">
+              <h2 className="text-3xl font-bold mb-6">Bespoke Investment Facilitation</h2>
+              <p className="mb-6">
+                We specialize in identifying and securing high-value, exclusive investment opportunities across Southeast Asia. Our team's deep market insights and extensive network allow us to uncover hidden gems before they reach the public eye. From emerging tech startups in Singapore's vibrant ecosystem to untapped natural resources in Indonesia's archipelago, we provide our clients with first-mover advantages in the region's most promising sectors.
+              </p>
+              
+              <p className="font-semibold mb-4">Our investment facilitation services encompass:</p>
+              <ul className="list-disc pl-6 mb-8">
+                <li>Proprietary deal sourcing from our exclusive network</li>
+                <li>Comprehensive due diligence leveraging local expertise</li>
+                <li>Seamless transaction execution with utmost discretion</li>
+                <li>Post-investment support and value optimization</li>
+              </ul>
+
+              <h2 className="text-3xl font-bold mb-6">Strategic Advisory Services</h2>
+              <p className="mb-6">
+                In the intricate tapestry of Southeast Asian business landscapes, local knowledge is paramount. Our strategic advisory services offer a beacon of clarity, guiding our clients through the nuances of each market.
+              </p>
+              
+              <p className="font-semibold mb-4">We provide:</p>
+              <ul className="list-disc pl-6 mb-8">
+                <li>In-depth market entry strategies tailored to each country's unique ecosystem</li>
+                <li>Risk assessment and mitigation plans accounting for geopolitical, economic, and cultural factors</li>
+                <li>Competitive intelligence and market positioning advice</li>
+                <li>Strategic partnership identification and facilitation with local powerhouses</li>
+              </ul>
+
+              <p className="mb-6">
+                At ATRIUM CONSULTANCY LTD, we don't just facilitate transactions; we architect opportunities. Our services are designed to provide you with a decisive edge in Southeast Asia's competitive investment landscape. We combine global best practices with nuanced local insights, ensuring that your forays into this dynamic region are not just successful, but transformative.
+              </p>
+
+              <p className="mb-6">
+                In a world where information is ubiquitous but true insight is rare, we stand as your trusted partners, turning the complex into the conquerable. With ATRIUM CONSULTANCY LTD, you're not just investing in Southeast Asia; you're shaping its future while securing yours.
+              </p>
+
+              <p className="mb-6">
+                Embark on your Southeast Asian investment journey with us, and experience the power of truly bespoke, elite consultancy services. At ATRIUM CONSULTANCY LTD, we don't follow the trends – we set them.
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+      
       {/* Opportunities Section */}
       <div className="container mx-auto px-4 max-w-6xl py-24">
         <div className="space-y-32">
@@ -118,4 +175,4 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({ icon, title, descript
   )
 }
 
-export default InvestmentOpportunities
+export default Services
