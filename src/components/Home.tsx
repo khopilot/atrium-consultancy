@@ -1,41 +1,22 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { ArrowRight, Shield, Key, Briefcase, BarChart } from 'lucide-react';
 import { motion } from 'framer-motion';
-import Spline from '@splinetool/react-spline';
+import icosahedronImage from '../images/icosahedron@4-1728x868.png';
 import primroseImage from '../images/Dreamsville.png';
 
 const Home: React.FC = () => {
-  const splineContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const resizeSplineViewer = () => {
-      if (splineContainerRef.current) {
-        const splineViewer = splineContainerRef.current.querySelector('spline-viewer') as HTMLElement;
-        if (splineViewer) {
-          splineViewer.style.width = '100%';
-          splineViewer.style.height = '100%';
-        }
-      }
-    };
-
-    resizeSplineViewer();
-    window.addEventListener('resize', resizeSplineViewer);
-
-    return () => {
-      window.removeEventListener('resize', resizeSplineViewer);
-    };
-  }, []);
-
   return (
     <div className="bg-gray-50">
-      {/* Hero Section with Spline Background */}
+      {/* Hero Section with Background Image */}
       <div className="relative h-screen overflow-hidden">
-        <div ref={splineContainerRef} className="absolute inset-0 z-0">
-          <Spline
-            scene="https://prod.spline.design/UzUpmAFhAzgBEWBT/scene.splinecode"
+        <div className="absolute inset-0 z-0">
+          <img
+            src={icosahedronImage}
+            alt="Hero Background"
+            className="w-full h-full object-cover"
           />
         </div>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -60,7 +41,7 @@ const Home: React.FC = () => {
                 CONSULTANCY .LTD
               </motion.span>
             </h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
@@ -68,14 +49,14 @@ const Home: React.FC = () => {
             >
               Empowering Global Investments in Southeast Asia
             </motion.p>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
               className="text-xl text-black mb-8"
             >
-              Navigate complex markets with confidence and maximize your investment potential. 
-              Our expert consultancy services guide you through the intricacies of Southeast Asian markets, 
+              Navigate complex markets with confidence and maximize your investment potential.
+              Our expert consultancy services guide you through the intricacies of Southeast Asian markets,
               ensuring strategic growth and sustainable success.
             </motion.p>
             <motion.div
@@ -83,7 +64,7 @@ const Home: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
             >
-              <motion.a 
+              <motion.a
                 href="/services"
                 className="bg-white text-black px-6 py-3 rounded-full inline-flex items-center hover:bg-gray-200 transition duration-300 text-lg border border-black shadow-[0_0_0_1px_rgba(0,0,0,1)]"
                 whileHover={{ scale: 1.05 }}
@@ -98,7 +79,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* Our Mission Section */}
-      <motion.section 
+      <motion.section
         className="py-32 bg-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -106,7 +87,7 @@ const Home: React.FC = () => {
       >
         <div className="container mx-auto px-4">
           <h2 className="font-serif text-5xl font-light text-center mb-12">Our Mission</h2>
-          
+
           <div className="max-w-4xl mx-auto mb-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -114,14 +95,14 @@ const Home: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="bg-gray-100 rounded-lg overflow-hidden shadow-lg"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" 
-                alt="ATRIUM CONSULTANCY Mission" 
+              <img
+                src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                alt="ATRIUM CONSULTANCY Mission"
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
                 <p className="font-serif text-2xl text-center text-gray-800">
-                  To empower investors by offering expert guidance on the intricacies of the investment process 
+                  To empower investors by offering expert guidance on the intricacies of the investment process
                   and identifying lucrative opportunities for cross-border investments in Southeast Asia.
                 </p>
               </div>
@@ -130,7 +111,7 @@ const Home: React.FC = () => {
 
           <div className="max-w-4xl mx-auto text-lg text-gray-700 space-y-6">
             <p>
-            At ATRIUM CONSULTANCY LTD, we specialize in facilitating high-value investments in Southeast Asia by providing exclusive access to unique opportunities. Built on decades of experience, our firm leverages a vast network of industry leaders, government officials, and key decision-makers to assist foreign investors in navigating the complex market landscape. Our commitment to discretion and expertise gives our clients a competitive edge, unlocking doors that were previously inaccessible.
+              At ATRIUM CONSULTANCY LTD, we specialize in facilitating high-value investments in Southeast Asia by providing exclusive access to unique opportunities. Built on decades of experience, our firm leverages a vast network of industry leaders, government officials, and key decision-makers to assist foreign investors in navigating the complex market landscape. Our commitment to discretion and expertise gives our clients a competitive edge, unlocking doors that were previously inaccessible.
             </p>
             <p>
               Our team of seasoned experts possesses an intimate understanding of Southeast Asia's diverse cultural, legal, and economic intricacies. This profound knowledge allows us to navigate the most challenging regulatory environments with finesse and precision, ensuring our clients' interests are not just protected, but optimized for maximum return. From the bustling financial hubs of Singapore and Bangkok to the emerging tech corridors of Ho Chi Minh City and Jakarta, we offer insights that go beyond surface-level analysis, tapping into the pulse of local markets and future trends.
@@ -155,7 +136,7 @@ const Home: React.FC = () => {
       <WhyUsSection />
 
       {/* Call to Action */}
-      <motion.section 
+      <motion.section
         className="py-16 bg-black text-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -164,7 +145,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-serif text-3xl font-bold mb-6">Ready to Invest in Southeast Asia?</h2>
           <p className="text-xl mb-8">Let us guide you through the process and maximize your investment potential.</p>
-          <motion.a 
+          <motion.a
             href="/contact"
             className="bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300"
             whileHover={{ scale: 1.05 }}
@@ -199,10 +180,10 @@ const WhyUsSection: React.FC = () => {
             bulletPoints={[
               "Emerging tech startups poised for exponential growth",
               "Prime real estate in developing urban centers",
-              "Government infrastructure projects with long-term value"
+              "Government infrastructure projects with long-term value",
             ]}
             imageUrl={primroseImage}
-            imageClassName="w-full h-64 object-cover"  // Adjust these values as needed
+            imageClassName="w-full h-64 object-cover"
           />
 
           <OpportunityCard
@@ -213,7 +194,7 @@ const WhyUsSection: React.FC = () => {
             bulletPoints={[
               "Secure communication channels for all client interactions",
               "Anonymized transaction processes to protect your identity",
-              "Strict non-disclosure agreements with all involved parties"
+              "Strict non-disclosure agreements with all involved parties",
             ]}
             imageUrl="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
           />
@@ -226,7 +207,7 @@ const WhyUsSection: React.FC = () => {
             bulletPoints={[
               "Influential business magnates and industry pioneers",
               "Key government decision-makers and policy influencers",
-              "Top-tier legal and financial institutions"
+              "Top-tier legal and financial institutions",
             ]}
             imageUrl="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
           />
@@ -239,7 +220,7 @@ const WhyUsSection: React.FC = () => {
             bulletPoints={[
               "Comprehensive risk assessment and mitigation strategies",
               "Custom portfolio diversification across emerging sectors",
-              "Adaptive investment timelines to maximize returns"
+              "Adaptive investment timelines to maximize returns",
             ]}
             imageUrl="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
           />
@@ -258,7 +239,16 @@ interface OpportunityCardProps {
   imageUrl: string;
   imageClassName?: string;
 }
-const OpportunityCard: React.FC<OpportunityCardProps> = ({ icon, title, description, additionalInfo, bulletPoints, imageUrl, imageClassName }) => {
+
+const OpportunityCard: React.FC<OpportunityCardProps> = ({
+  icon,
+  title,
+  description,
+  additionalInfo,
+  bulletPoints,
+  imageUrl,
+  imageClassName,
+}) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -278,14 +268,14 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({ icon, title, descript
           {icon}
           <h3 className="text-4xl font-light">{title}</h3>
         </div>
-        <p className="text-xl text-gray-700 leading-relaxed">
-          {description}
-        </p>
+        <p className="text-xl text-gray-700 leading-relaxed">{description}</p>
         <div>
           <h4 className="text-2xl font-light mb-4">{additionalInfo}</h4>
           <ul className="list-disc list-inside space-y-2">
             {bulletPoints.map((point, index) => (
-              <li key={index} className="text-lg text-gray-700">{point}</li>
+              <li key={index} className="text-lg text-gray-700">
+                {point}
+              </li>
             ))}
           </ul>
         </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Lock, ArrowRight } from 'lucide-react';
+import icosahedronImage from '../images/icosahedron@4-1728x868.png'; // Import the image
 
 
 const projectFamilies = [
@@ -122,9 +123,9 @@ const Projects: React.FC = () => {
       {/* Hero Section */}
       <div className="relative h-screen overflow-hidden">
         <img 
-          src="src/components/icosahedron@4-1728x868.png" 
+          src={icosahedronImage} // Use the imported image
           alt="Icosahdron" 
-          className="absolute inset-0 w-full h-full object-cover z-0" // Set image as background
+          className="absolute inset-0 w-full h-full object-cover z-0" 
         />
         <motion.div 
           initial={{ opacity: 0 }}
