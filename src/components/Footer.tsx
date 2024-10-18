@@ -86,7 +86,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700 flex flex-wrap justify-between items-center">
-          <p className="text-sm">&copy; 2024 Atrium Consultants Ltd. All rights reserved.</p>
+          <p className="text-sm">&copy; 2024 Atrium Consultancy .LTD. All rights reserved.</p> {/* Updated text */}
           <button onClick={scrollToTop} className="text-sm flex items-center hover:text-gray-300" aria-label="Back to top">
             <ArrowUp className="w-4 h-4 mr-1" /> Back to Top
           </button>
