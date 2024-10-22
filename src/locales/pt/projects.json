@@ -1,0 +1,150 @@
+{
+    "projects": {
+      "heroSection": {
+        "title": "Portfólios de Projetos Exclusivos",
+        "description": "Descubra nossa coleção selecionada de oportunidades de investimento de alto impacto em diversos setores."
+      },
+      "projectsSection": {
+        "intro": "Descubra nossa coleção selecionada de oportunidades de investimento de alto impacto em diversos setores."
+      },
+      "projectFamilies": [
+        {
+          "id": 1,
+          "name": "Desenvolvimentos Imobiliários de Luxo",
+          "description": "Propriedades exclusivas de alto padrão e projetos de resorts em locais privilegiados"
+        },
+        {
+          "id": 2,
+          "name": "Inovações Tecnológicas de Ponta",
+          "description": "Investimentos em startups de tecnologia revolucionárias e pesquisa"
+        },
+        {
+          "id": 3,
+          "name": "Soluções de Energia Sustentável",
+          "description": "Projetos de energia verde e infraestrutura ecológica"
+        },
+        {
+          "id": 4,
+          "name": "Serviços Financeiros de Próxima Geração",
+          "description": "Soluções bancárias e fintech revolucionárias"
+        },
+        {
+          "id": 5,
+          "name": "Iniciativas Avançadas de Saúde",
+          "description": "Tecnologias médicas pioneiras e instalações de última geração"
+        },
+        {
+          "id": 6,
+          "name": "Aeroespacial e Exploração Espacial",
+          "description": "Empreendimentos que empurram os limites da viagem aérea e espacial"
+        },
+        {
+          "id": 7,
+          "name": "Fronteiras de Inteligência Artificial",
+          "description": "Investimentos em pesquisa de IA e aplicações práticas"
+        },
+        {
+          "id": 8,
+          "name": "Iniciativas de Computação Quântica",
+          "description": "Desenvolvendo tecnologias de computação de próxima geração"
+        },
+        {
+          "id": 9,
+          "name": "Avanços em Biotecnologia",
+          "description": "Projetos de pesquisa e desenvolvimento em biotecnologia de ponta"
+        },
+        {
+          "id": 10,
+          "name": "Infraestruturas de Cidades Inteligentes",
+          "description": "Projetos integrados de desenvolvimento urbano aproveitando IoT e IA"
+        },
+        {
+          "id": 11,
+          "name": "Sistemas de Transporte Autônomo",
+          "description": "Veículos autônomos e redes de transporte avançadas"
+        },
+        {
+          "id": 12,
+          "name": "Inovações em Cibersegurança",
+          "description": "Soluções avançadas de segurança digital e infraestrutura"
+        },
+        {
+          "id": 13,
+          "name": "Blockchain e Criptomoedas",
+          "description": "Investimentos em tecnologias de registro distribuído e ativos digitais"
+        },
+        {
+          "id": 14,
+          "name": "Avanços em Nanotecnologia",
+          "description": "Pesquisa e aplicações pioneiras em ciência em escala nanométrica"
+        },
+        {
+          "id": 15,
+          "name": "Realidade Aumentada e Virtual",
+          "description": "Tecnologias imersivas para várias indústrias e aplicações"
+        },
+        {
+          "id": 16,
+          "name": "Pesquisa de Materiais Avançados",
+          "description": "Desenvolvimento de materiais inovadores com propriedades extraordinárias"
+        },
+        {
+          "id": 17,
+          "name": "Tecnologias de Agricultura de Precisão",
+          "description": "Soluções agrícolas de alta tecnologia para produção de alimentos sustentável"
+        },
+        {
+          "id": 18,
+          "name": "Exploração e Conservação Oceânica",
+          "description": "Projetos inovadores para pesquisa em águas profundas e preservação marinha"
+        }
+      ],
+      "modal": {
+        "description": "Nosso portfólio neste setor inclui vários projetos de alto perfil com potencial significativo de retorno. Devido à natureza confidencial dessas empreitadas, informações detalhadas estão disponíveis apenas mediante solicitação e sujeitas aos nossos rigorosos protocolos de privacidade.",
+        "buttons": {
+          "back": "Voltar",
+          "requestAccess": "Solicitar Acesso"
+        }
+      },
+      "opportunitiesSection": {
+        "title": "Seção de Oportunidades",
+        "cards": [
+          {
+            "title": "Acesso a Ativos Governamentais de Alto Valor",
+            "description": "Aproveite aquisições exclusivas de ativos governamentais com nossa orientação especializada. Beneficie-se do nosso profundo entendimento das regulamentações locais e das melhores práticas globais para garantir negócios de alto valor com discrição e eficiência. Posicione-se para o sucesso em transações sensíveis que oferecem potencial de crescimento significativo.",
+            "ctaText": "Explore oportunidades de ativos governamentais"
+          },
+          {
+            "title": "Ganhe uma Vantagem Competitiva nas Negociações",
+            "description": "Aproveite nossas décadas de experiência para garantir resultados favoráveis em seus investimentos internacionais. Beneficie-se de nossa orientação culturalmente sutil e específica ao contexto para navegar por parcerias transfronteiriças complexas. Maximize seu potencial de negociação desde a estratégia inicial até o fechamento de negócios.",
+            "ctaText": "Aprimore seu poder de negociação"
+          },
+          {
+            "title": "Descubra Oportunidades de Mercado Ocultas",
+            "description": "Mantenha-se à frente com nossa due diligence abrangente e pesquisa de mercado. Obtenha insights acionáveis que combinam análise orientada por dados com inteligência de campo. Tome decisões informadas que mitigam riscos e capitalizam as dinâmicas oportunidades do mercado sul-asiático.",
+            "ctaText": "Descubra insights de mercado"
+          },
+          {
+            "title": "Maximize o Potencial de Investimento Imobiliário",
+            "description": "Capitalizar no crescente mercado imobiliário sul-asiático com nossas soluções imobiliárias de ponta a ponta. Otimize o desempenho dos ativos, garanta conformidade com as leis locais e identifique oportunidades lucrativas neste setor em rápido crescimento. Transforme desafios em empreendimentos lucrativos em toda a região.",
+            "ctaText": "Explore perspectivas imobiliárias"
+          },
+          {
+            "title": "Otimize Seus Retornos de Investimento",
+            "description": "Aprimore seu desempenho financeiro com nossa análise aprofundada de retorno de investimento. Obtenha uma avaliação abrangente das perspectivas de curto e longo prazo, considerando tendências de mercado, fatores de risco e potencial de crescimento. Tome decisões baseadas em dados que maximizam retornos e alcançam seus objetivos financeiros no mercado sul-asiático.",
+            "ctaText": "Maximize seu potencial de investimento"
+          },
+          {
+            "title": "Expansão Sem Fronteiras nos Mercados Sul-Asiáticos",
+            "description": "Acelere o crescimento de seu negócio com nossos serviços de facilitação de residência e emprego. Navegue pelas complexidades de estabelecer sua presença no Sul da Ásia com facilidade. Concentre-se nas atividades principais de seu negócio enquanto garantimos uma transição suave para você e seus funcionários neste mercado vibrante.",
+            "ctaText": "Simplifique sua entrada no mercado"
+          }
+        ]
+      },
+      "callToAction": {
+        "title": "Pronto para Aproveitar Essas Oportunidades?",
+        "description": "Vamos discutir como você pode aproveitar nossa expertise para capitalizar o vasto potencial dos mercados sul-asiáticos e maximizar seus retornos de investimento.",
+        "buttonText": "Agende uma Sessão de Estratégia"
+      }
+    }
+  }

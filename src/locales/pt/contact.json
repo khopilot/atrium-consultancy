@@ -1,0 +1,80 @@
+{
+    "contact": {
+      "heroSection": {
+        "title": "Entre em Contato com a ATRIUM CONSULTANCY",
+        "subtitle": "Desbloqueie Oportunidades Exclusivas de Investimento no Sudeste Asiático",
+        "cta": "Solicitar uma Consulta Privada"
+      },
+      "contactContent": {
+        "heading": "Entre em Contato",
+        "description": "Adoraríamos ouvir de você. Envie-nos uma mensagem usando o formulário ou entre em contato através das informações abaixo."
+      },
+      "contactInformation": {
+        "title": "Entre em Contato",
+        "phone": "+853 1234 5678",
+        "email": "Email: info@atriumconsultants.com",
+        "address": "61 Avenida de Almeida Ribeiro, 13F - A Circle Square Building, Macau, Macau SAR."
+      },
+      "companyInfo": {
+        "title": "Atrium Consultants Ltd",
+        "tagline": "Conectando Governos com Compradores Exclusivos em Todo o Mundo"
+      },
+      "socialMedia": {
+        "title": "Siga-nos",
+        "twitter": "Twitter",
+        "instagram": "Instagram"
+      },
+      "location": {
+        "title": "Nossa Localização",
+        "iframeTitle": "Nossa Localização"
+      },
+      "contactForm": {
+        "successMessage": "Mensagem enviada com sucesso!",
+        "errorMessage": "Falha ao enviar a mensagem. Por favor, tente novamente.",
+        "generalErrorMessage": "Ocorreu um erro. Por favor, tente novamente mais tarde.",
+        "form": {
+          "firstName": {
+            "label": "Nome*",
+            "placeholder": "João",
+            "error": "O nome é obrigatório."
+          },
+          "lastName": {
+            "label": "Sobrenome",
+            "placeholder": "Silva"
+          },
+          "email": {
+            "label": "Email*",
+            "placeholder": "joao.silva@exemplo.com",
+            "error": "Um email válido é obrigatório."
+          },
+          "phoneNumber": {
+            "label": "Número de Telefone",
+            "placeholder": "+55 11 2345 6789",
+            "error": "Digite um número de telefone válido."
+          },
+          "subject": {
+            "label": "Selecionar Assunto",
+            "options": {
+              "generalInquiry": "Consulta Geral",
+              "partnerships": "Parcerias",
+              "projectProposal": "Proposta de Projeto",
+              "other": "Outro"
+            }
+          },
+          "message": {
+            "label": "Mensagem*",
+            "placeholder": "Escreva sua mensagem...",
+            "error": "A mensagem é obrigatória."
+          },
+          "consent": {
+            "label": "Eu consinto com o processamento dos meus dados pessoais.*",
+            "error": "O consentimento é obrigatório."
+          },
+          "submitButton": {
+            "sending": "Enviando...",
+            "sendMessage": "Enviar Mensagem"
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,16 @@
+
+{
+    "language": {
+      "english": "英语",
+      "chinese": "中文",
+      "portuguese": "葡萄牙语"
+    },
+    "nav": {
+      "home": "首页",
+      "about": "关于",
+      "services": "服务",
+      "projects": "项目",
+      "contact": "联系"
+    },
+    "menu": "切换菜单"
+  }

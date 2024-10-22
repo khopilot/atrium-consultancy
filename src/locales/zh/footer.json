@@ -1,0 +1,41 @@
+{
+    "footer": {
+      "company": {
+        "name": "Atrium Consultants Ltd",
+        "tagline": "连接政府与全球独家买家",
+        "address": "澳门澳门特别行政区，阿尔梅达里贝罗大街61号，\n13楼 - 圆形广场大厦。"
+      },
+      "quickLinks": {
+        "title": "快速链接",
+        "links": {
+          "services": "服务",
+          "contactUs": "联系我们",
+          "privacyPolicy": "隐私政策",
+          "termsOfService": "服务条款"
+        }
+      },
+      "contact": {
+        "title": "联系方式",
+        "email": "电子邮件: info@atriumconsultants.com",
+        "phone": "电话: +853 1234 5678",
+        "social": {
+          "linkedin": "领英",
+          "twitter": "推特"
+        }
+      },
+      "newsletter": {
+        "title": "通讯",
+        "emailPlaceholder": "输入您的电子邮件",
+        "subscribe": "订阅",
+        "language": "选择语言",
+        "languages": {
+          "english": "English",
+          "chinese": "中文",
+          "portuguese": "Português"
+        }
+      },
+      "copyright": "© 2024 Atrium Consultancy .LTD. 保留所有权利。",
+      "backToTop": "返回顶部"
+    }
+  }
+  

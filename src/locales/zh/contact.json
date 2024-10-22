@@ -1,0 +1,81 @@
+{
+    "contact": {
+      "heroSection": {
+        "title": "与 ATIRUM CONSULTANCY 联系",
+        "subtitle": "解锁东南亚的独家投资机会",
+        "cta": "请求私人咨询"
+      },
+      "contactContent": {
+        "heading": "联系我们",
+        "description": "我们很乐意听到您的声音。使用表单向我们发送消息，或通过下面的联系方式与我们联系。"
+      },
+      "contactInformation": {
+        "title": "联系我们",
+        "phone": "+853 1234 5678",
+        "email": "电子邮件: info@atriumconsultants.com",
+        "address": "澳门澳门特别行政区，阿尔梅达里贝罗大街61号，\n13楼 - 圆形广场大厦。"
+      },
+      "companyInfo": {
+        "title": "Atrium Consultants Ltd",
+        "tagline": "连接政府与全球独家买家"
+      },
+      "socialMedia": {
+        "title": "关注我们",
+        "twitter": "推特",
+        "instagram": "Instagram"
+      },
+      "location": {
+        "title": "我们的地点",
+        "iframeTitle": "我们的地点"
+      },
+      "contactForm": {
+        "successMessage": "消息发送成功！",
+        "errorMessage": "发送消息失败。请再试一次。",
+        "generalErrorMessage": "发生错误。请稍后再试。",
+        "form": {
+          "firstName": {
+            "label": "名字*",
+            "placeholder": "张",
+            "error": "名字是必填项。"
+          },
+          "lastName": {
+            "label": "姓氏",
+            "placeholder": "伟"
+          },
+          "email": {
+            "label": "电子邮件*",
+            "placeholder": "zhang.wei@example.com",
+            "error": "需要一个有效的电子邮件。"
+          },
+          "phoneNumber": {
+            "label": "电话号码",
+            "placeholder": "+86 138 0013 8000",
+            "error": "请输入有效的电话号码。"
+          },
+          "subject": {
+            "label": "选择主题",
+            "options": {
+              "generalInquiry": "一般咨询",
+              "partnerships": "合作伙伴关系",
+              "projectProposal": "项目提案",
+              "other": "其他"
+            }
+          },
+          "message": {
+            "label": "消息*",
+            "placeholder": "撰写您的消息...",
+            "error": "消息是必填项。"
+          },
+          "consent": {
+            "label": "我同意处理我的个人数据.*",
+            "error": "同意是必需的。"
+          },
+          "submitButton": {
+            "sending": "发送中...",
+            "sendMessage": "发送消息"
+          }
+        }
+      }
+    }
+  }
+  

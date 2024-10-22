@@ -1,0 +1,35 @@
+{
+    "privacyPolicy": {
+      "title": "Política de Privacidade",
+      "sections": {
+        "introduction": {
+          "title": "1. Introdução",
+          "content": "A Atrium Consultants Ltd está comprometida em proteger a privacidade e a confidencialidade de nossos clientes e visitantes do site. Esta Política de Privacidade descreve nossas práticas relacionadas à coleta, uso e proteção de suas informações pessoais."
+        },
+        "informationCollection": {
+          "title": "2. Coleta de Informações",
+          "content": "Coletamos informações que você nos fornece diretamente, como quando você nos contata através do nosso site ou utiliza nossos serviços. Isso pode incluir seu nome, endereço de e-mail, número de telefone e quaisquer outras informações que você escolher fornecer."
+        },
+        "useOfInformation": {
+          "title": "3. Uso das Informações",
+          "content": "As informações que coletamos são usadas exclusivamente para o propósito de fornecer nossos serviços de consultoria, responder às suas consultas e melhorar nossos serviços. Não compartilhamos suas informações pessoais com terceiros, exceto quando exigido por lei ou com seu consentimento explícito."
+        },
+        "dataSecurity": {
+          "title": "4. Segurança de Dados",
+          "content": "Implementamos medidas de segurança rigorosas para proteger suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição. No entanto, nenhum método de transmissão pela Internet ou armazenamento eletrônico é 100% seguro, e não podemos garantir segurança absoluta."
+        },
+        "confidentiality": {
+          "title": "5. Confidencialidade em Transações Comerciais",
+          "content": "Entendemos a natureza sensível das transações que facilitamos. Todas as negociações comerciais e informações dos clientes são tratadas com a máxima confidencialidade. Adotamos práticas estritas de não divulgação e compartilhamos informações apenas na base de necessidade de saber dentro de nossa organização."
+        },
+        "changesPolicy": {
+          "title": "6. Alterações a Esta Política",
+          "content": "Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos você sobre quaisquer alterações publicando a nova Política de Privacidade nesta página. Recomenda-se que você revise esta Política de Privacidade periodicamente para quaisquer mudanças."
+        },
+        "contactUs": {
+          "title": "7. Contate-Nos",
+          "content": "Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco pelo e-mail privacy@atriumconsultants.com."
+        }
+      }
+    }
+  }

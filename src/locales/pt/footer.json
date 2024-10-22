@@ -1,0 +1,40 @@
+{
+    "footer": {
+      "company": {
+        "name": "Atrium Consultants Ltd",
+        "tagline": "Conectando Governos com Compradores Exclusivos em Todo o Mundo",
+        "address": "61 Avenida de Almeida Ribeiro,\n13F - A Circle Square Building,\nMacau, Macau SAR."
+      },
+      "quickLinks": {
+        "title": "Links Rápidos",
+        "links": {
+          "services": "Serviços",
+          "contactUs": "Contate-Nos",
+          "privacyPolicy": "Política de Privacidade",
+          "termsOfService": "Termos de Serviço"
+        }
+      },
+      "contact": {
+        "title": "Contato",
+        "email": "Email: info@atriumconsultants.com",
+        "phone": "Telefone: +853 1234 5678",
+        "social": {
+          "linkedin": "LinkedIn",
+          "twitter": "Twitter"
+        }
+      },
+      "newsletter": {
+        "title": "Newsletter",
+        "emailPlaceholder": "Digite seu email",
+        "subscribe": "Inscrever-se",
+        "language": "Selecione o idioma",
+        "languages": {
+          "english": "Inglês",
+          "chinese": "中文",
+          "portuguese": "Português"
+        }
+      },
+      "copyright": "© 2024 Atrium Consultancy .LTD. Todos os direitos reservados.",
+      "backToTop": "Voltar ao Topo"
+    }
+  }

@@ -1,15 +1,79 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import {
-  Phone,
-  Mail,
-  MapPin,
-  Twitter,
-  Instagram,
-  Send,
-  ArrowRight,
+  Phone, Mail, MapPin, Twitter, Instagram, Send, ArrowRight,
 } from 'lucide-react';
-import backgroundImage from '../images/Mind House.png'; // Updated to the new image
+import backgroundImage from '../images/Mind House.png';
+
+// TypeScript interfaces for translations
+interface HeroSection {
+  title: string;
+  subtitle: string;
+  cta: string;
+}
+
+interface ContactContent {
+  heading: string;
+  description: string;
+}
+
+interface ContactInformation {
+  title: string;
+  phone: string;
+  email: string;
+  address: string;
+}
+
+interface CompanyInfo {
+  title: string;
+  tagline: string;
+}
+
+interface SocialMedia {
+  title: string;
+  twitter: string;
+  instagram: string;
+}
+
+interface Location {
+  title: string;
+  iframeTitle: string;
+}
+
+interface ContactFormTranslations {
+  successMessage: string;
+  errorMessage: string;
+  generalErrorMessage: string;
+  form: {
+    firstName: { label: string; placeholder: string; error: string; };
+    lastName: { label: string; placeholder: string; };
+    email: { label: string; placeholder: string; error: string; };
+    phoneNumber: { label: string; placeholder: string; error: string; };
+    subject: {
+      label: string;
+      options: {
+        generalInquiry: string;
+        partnerships: string;
+        projectProposal: string;
+        other: string;
+      };
+    };
+    message: { label: string; placeholder: string; error: string; };
+    consent: { label: string; error: string; };
+    submitButton: { sending: string; sendMessage: string; };
+  };
+}
+
+interface ContactTranslations {
+  heroSection: HeroSection;
+  contactContent: ContactContent;
+  contactInformation: ContactInformation;
+  companyInfo: CompanyInfo;
+  socialMedia: SocialMedia;
+  location: Location;
+  contactForm: ContactFormTranslations;
+}
 
 interface FormData {
   firstName: string;
@@ -22,12 +86,15 @@ interface FormData {
 }
 
 const Contact = () => {
+  const { t, ready } = useTranslation('contact');
+  const translations = t('contact', { returnObjects: true }) as ContactTranslations;
+
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
     email: '',
     phoneNumber: '',
-    subject: 'General Inquiry',
+    subject: translations.contactForm.form.subject.options.generalInquiry,
     message: '',
     consent: false,
   });
@@ -36,18 +103,19 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState<string | null>(null);
 
+  if (!ready) {
+    return <div className="h-screen flex items-center justify-center">Loading...</div>;
+  }
+
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, type, value, checked } = e.target as HTMLInputElement;
-
-    setFormData((prevData) => ({
+    setFormData(prevData => ({
       ...prevData,
       [name]: type === 'checkbox' ? checked : value,
     }));
-
-    // Clear errors on change
-    setErrors((prevErrors) => ({ ...prevErrors, [name]: '' }));
+    setErrors(prevErrors => ({ ...prevErrors, [name]: '' }));
   };
 
   const validateForm = () => {
@@ -56,19 +124,21 @@ const Contact = () => {
     const phoneRegex = /^\+?[0-9\s\-()]{7,20}$/;
 
     if (!formData.firstName.trim()) {
-      newErrors.firstName = 'First name is required.';
+      newErrors.firstName = translations.contactForm.form.firstName.error;
     }
     if (!formData.email.trim() || !emailRegex.test(formData.email)) {
-      newErrors.email = 'A valid email is required.';
+      newErrors.email = translations.contactForm.form.email.error;
     }
     if (formData.phoneNumber && !phoneRegex.test(formData.phoneNumber)) {
-      newErrors.phoneNumber = 'Enter a valid phone number.';
+      newErrors.phoneNumber = translations.contactForm.form.phoneNumber.error;
     }
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required.';
+      newErrors.message = translations.contactForm.form.message.error;
     }
     if (!formData.consent) {
-      newErrors.consent = true; // or simply skip this validation
+      newErrors.consent = true; // Set to true to indicate an error
+    } else {
+      newErrors.consent = undefined; // Clear the error if consent is given
     }
 
     setErrors(newErrors);
@@ -77,10 +147,7 @@ const Contact = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     setIsSubmitting(true);
     setSubmitSuccess(null);
@@ -88,29 +155,27 @@ const Contact = () => {
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        setSubmitSuccess('Message sent successfully!');
+        setSubmitSuccess(translations.contactForm.successMessage);
         setFormData({
           firstName: '',
           lastName: '',
           email: '',
           phoneNumber: '',
-          subject: 'General Inquiry',
+          subject: translations.contactForm.form.subject.options.generalInquiry,
           message: '',
           consent: false,
         });
       } else {
-        setSubmitSuccess('Failed to send message. Please try again.');
+        setSubmitSuccess(translations.contactForm.errorMessage);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      setSubmitSuccess('An error occurred. Please try again later.');
+      setSubmitSuccess(translations.contactForm.generalErrorMessage);
     } finally {
       setIsSubmitting(false);
     }
@@ -119,63 +184,88 @@ const Contact = () => {
   return (
     <div className="bg-white text-black">
       {/* Hero Section */}
-      <ContactHero />
+      <section className="relative h-screen overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={backgroundImage}
+            alt={translations.heroSection.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+        </div>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center text-white px-4">
+            <motion.h1
+              className="text-5xl font-bold mb-4"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              {translations.heroSection.title}
+            </motion.h1>
+            <motion.p
+              className="text-xl mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              {translations.heroSection.subtitle}
+            </motion.p>
+            <motion.a
+              href="#contact-form"
+              className="bg-white text-black px-8 py-4 rounded-full inline-flex items-center font-semibold text-lg hover:bg-gray-200 transition duration-300"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              {translations.heroSection.cta}
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </motion.a>
+          </div>
+        </div>
+      </section>
 
-      {/* Contact Content */}
       <div className="flex flex-col md:flex-row">
         {/* Left Side - Contact Information */}
         <div className="md:w-1/2 bg-black text-white p-8">
-          <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
-          <p className="mb-8">
-            We'd love to hear from you. Send us a message using the form, or
-            reach out through our contact information below.
-          </p>
+          <h2 className="text-3xl font-bold mb-4">{translations.contactContent.heading}</h2>
+          <p className="mb-8">{translations.contactContent.description}</p>
 
           <div className="space-y-4">
             <p className="flex items-center">
-              <Phone className="mr-4" /> +853 1234 5678
+              <Phone className="mr-4" />
+              {translations.contactInformation.phone}
             </p>
             <p className="flex items-center">
-              <Mail className="mr-4" />{' '}
-              <a href="mailto:info@atriumconsultants.com" className="underline">
-                info@atriumconsultants.com
+              <Mail className="mr-4" />
+              <a href={`mailto:${translations.contactInformation.email}`} className="underline">
+                {translations.contactInformation.email}
               </a>
             </p>
             <p className="flex items-center">
-              <MapPin className="mr-4" /> 61 Avenida de Almeida Ribeiro, 13F -
-              A Circle Square Building, Macau, Macau SAR.
+              <MapPin className="mr-4" />
+              {translations.contactInformation.address}
             </p>
           </div>
 
           <div className="mt-12">
-            <h3 className="text-xl font-bold mb-4">Atrium Consultants Ltd</h3>
-            <p className="mb-4">
-              Connecting Governments with Exclusive Buyers Worldwide
-            </p>
+            <h3 className="text-xl font-bold mb-4">{translations.companyInfo.title}</h3>
+            <p className="mb-4">{translations.companyInfo.tagline}</p>
           </div>
 
           <div className="mt-8 flex space-x-4">
-            <a
-              href="https://twitter.com/yourprofile"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
               <Twitter className="cursor-pointer" />
             </a>
-            <a
-              href="https://instagram.com/yourprofile"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
               <Instagram className="cursor-pointer" />
             </a>
           </div>
 
-          {/* Map Section */}
           <div className="mt-8">
-            <h3 className="text-xl font-bold mb-4">Our Location</h3>
+            <h3 className="text-xl font-bold mb-4">{translations.location.title}</h3>
             <iframe
-              title="Our Location"
+              title={translations.location.iframeTitle}
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387144.5070661744!2d113.516331!3d22.198745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3401f4c1c1c1c1c1%3A0x1234567890abcdef!2s61%20Avenida%20de%20Almeida%20Ribeiro%2C%2013F%20-%20A%20Circle%20Square%20Building%2C%20Macau%2C%20Macau%20SAR!5e0!3m2!1sen!2smo!4v1610000000000!5m2!1sen!2smo"
               width="100%"
               height="300"
@@ -189,13 +279,11 @@ const Contact = () => {
         {/* Right Side - Contact Form */}
         <div className="md:w-1/2 p-8 flex flex-col" id="contact-form">
           {submitSuccess && (
-            <div
-              className={`mb-4 p-4 rounded ${
-                submitSuccess.includes('successfully')
-                  ? 'bg-green-100 text-green-800'
-                  : 'bg-red-100 text-red-800'
-              }`}
-            >
+            <div className={`mb-4 p-4 rounded ${
+              submitSuccess === translations.contactForm.successMessage
+                ? 'bg-green-100 text-green-800'
+                : 'bg-red-100 text-red-800'
+            }`}>
               {submitSuccess}
             </div>
           )}
@@ -204,7 +292,7 @@ const Contact = () => {
             <div className="flex mb-4">
               <div className="w-1/2 mr-2">
                 <label htmlFor="firstName" className="block mb-2 font-medium">
-                  First Name*
+                  {translations.contactForm.form.firstName.label}
                 </label>
                 <input
                   id="firstName"
@@ -215,18 +303,15 @@ const Contact = () => {
                   className={`w-full p-2 border-b ${
                     errors.firstName ? 'border-red-500' : 'border-gray-300'
                   } focus:outline-none focus:border-black`}
-                  autoComplete="given-name"
-                  placeholder="John"
+                  placeholder={translations.contactForm.form.firstName.placeholder}
                 />
                 {errors.firstName && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.firstName}
-                  </p>
+                  <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
                 )}
               </div>
               <div className="w-1/2 ml-2">
                 <label htmlFor="lastName" className="block mb-2 font-medium">
-                  Last Name
+                  {translations.contactForm.form.lastName.label}
                 </label>
                 <input
                   id="lastName"
@@ -235,8 +320,7 @@ const Contact = () => {
                   value={formData.lastName}
                   onChange={handleChange}
                   className="w-full p-2 border-b border-gray-300 focus:outline-none focus:border-black"
-                  autoComplete="family-name"
-                  placeholder="Doe"
+                  placeholder={translations.contactForm.form.lastName.placeholder}
                 />
               </div>
             </div>
@@ -244,7 +328,7 @@ const Contact = () => {
             <div className="flex mb-4">
               <div className="w-1/2 mr-2">
                 <label htmlFor="email" className="block mb-2 font-medium">
-                  Email*
+                  {translations.contactForm.form.email.label}
                 </label>
                 <input
                   id="email"
@@ -255,19 +339,15 @@ const Contact = () => {
                   className={`w-full p-2 border-b ${
                     errors.email ? 'border-red-500' : 'border-gray-300'
                   } focus:outline-none focus:border-black`}
-                  autoComplete="email"
-                  placeholder="john.doe@example.com"
+                  placeholder={translations.contactForm.form.email.placeholder}
                 />
                 {errors.email && (
                   <p className="text-red-500 text-sm mt-1">{errors.email}</p>
                 )}
               </div>
               <div className="w-1/2 ml-2">
-                <label
-                  htmlFor="phoneNumber"
-                  className="block mb-2 font-medium"
-                >
-                  Phone Number
+                <label htmlFor="phoneNumber" className="block mb-2 font-medium">
+                  {translations.contactForm.form.phoneNumber.label}
                 </label>
                 <input
                   id="phoneNumber"
@@ -278,20 +358,17 @@ const Contact = () => {
                   className={`w-full p-2 border-b ${
                     errors.phoneNumber ? 'border-red-500' : 'border-gray-300'
                   } focus:outline-none focus:border-black`}
-                  autoComplete="tel"
-                  placeholder="+1 234 567 8900"
+                  placeholder={translations.contactForm.form.phoneNumber.placeholder}
                 />
                 {errors.phoneNumber && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.phoneNumber}
-                  </p>
+                  <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>
                 )}
               </div>
             </div>
 
             <div className="mb-4">
               <label htmlFor="subject" className="block mb-2 font-medium">
-                Select Subject
+                {translations.contactForm.form.subject.label}
               </label>
               <select
                 id="subject"
@@ -300,16 +377,24 @@ const Contact = () => {
                 onChange={handleChange}
                 className="w-full p-2 border-b border-gray-300 focus:outline-none focus:border-black"
               >
-                <option value="General Inquiry">General Inquiry</option>
-                <option value="Partnerships">Partnerships</option>
-                <option value="Project Proposal">Project Proposal</option>
-                <option value="Other">Other</option>
+                <option value={translations.contactForm.form.subject.options.generalInquiry}>
+                  {translations.contactForm.form.subject.options.generalInquiry}
+                </option>
+                <option value={translations.contactForm.form.subject.options.partnerships}>
+                  {translations.contactForm.form.subject.options.partnerships}
+                </option>
+                <option value={translations.contactForm.form.subject.options.projectProposal}>
+                  {translations.contactForm.form.subject.options.projectProposal}
+                </option>
+                <option value={translations.contactForm.form.subject.options.other}>
+                  {translations.contactForm.form.subject.options.other}
+                </option>
               </select>
             </div>
 
             <div className="mb-4">
               <label htmlFor="message" className="block mb-2 font-medium">
-                Message*
+                {translations.contactForm.form.message.label}
               </label>
               <textarea
                 id="message"
@@ -320,7 +405,7 @@ const Contact = () => {
                   errors.message ? 'border-red-500' : 'border-gray-300'
                 } focus:outline-none focus:border-black`}
                 rows={4}
-                placeholder="Write your message..."
+                placeholder={translations.contactForm.form.message.placeholder}
               ></textarea>
               {errors.message && (
                 <p className="text-red-500 text-sm mt-1">{errors.message}</p>
@@ -336,10 +421,12 @@ const Contact = () => {
                   onChange={handleChange}
                   className="mr-2"
                 />
-                I consent to the processing of my personal data.*
+                {translations.contactForm.form.consent.label}
               </label>
               {errors.consent && (
-                <p className="text-red-500 text-sm mt-1">{errors.consent}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {translations.contactForm.form.consent.error}
+                </p>
               )}
             </div>
 
@@ -349,10 +436,10 @@ const Contact = () => {
               disabled={isSubmitting}
             >
               {isSubmitting ? (
-                <span>Sending...</span>
+                <span>{translations.contactForm.form.submitButton.sending}</span>
               ) : (
                 <>
-                  Send Message
+                  {translations.contactForm.form.submitButton.sendMessage}
                   <Send className="ml-2" size={18} />
                 </>
               )}
@@ -361,52 +448,6 @@ const Contact = () => {
         </div>
       </div>
     </div>
-  );
-};
-
-// ContactHero Component
-const ContactHero = () => {
-  return (
-    <section className="relative h-screen overflow-hidden">
-      <div className="absolute inset-0">
-        <img
-          src={backgroundImage}
-          alt="Contact ATRIUM CONSULTANCY"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-      </div>
-      <div className="relative z-10 flex items-center justify-center h-full">
-        <div className="text-center text-white px-4">
-          <motion.h1
-            className="text-5xl font-bold mb-4"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            Get in Touch with ATRIUM CONSULTANCY
-          </motion.h1>
-          <motion.p
-            className="text-xl mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
-            Unlock Exclusive Investment Opportunities in Southeast Asia
-          </motion.p>
-          <motion.a
-            href="#contact-form"
-            className="bg-white text-black px-8 py-4 rounded-full inline-flex items-center font-semibold text-lg hover:bg-gray-200 transition duration-300"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            Request a Private Consultation
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </motion.a>
-        </div>
-      </div>
-    </section>
   );
 };
 

@@ -1,0 +1,81 @@
+{
+    "contact": {
+      "heroSection": {
+        "title": "Get in Touch with ATRIUM CONSULTANCY",
+        "subtitle": "Unlock Exclusive Investment Opportunities in Southeast Asia",
+        "cta": "Request a Private Consultation"
+      },
+      "contactContent": {
+        "heading": "Get in Touch",
+        "description": "We'd love to hear from you. Send us a message using the form, or reach out through our contact information below."
+      },
+      "contactInformation": {
+        "title": "Get in Touch",
+        "phone": "+853 1234 5678",
+        "email": "Email: info@atriumconsultants.com",
+        "address": "61 Avenida de Almeida Ribeiro, 13F - A Circle Square Building, Macau, Macau SAR."
+      },
+      "companyInfo": {
+        "title": "Atrium Consultants Ltd",
+        "tagline": "Connecting Governments with Exclusive Buyers Worldwide"
+      },
+      "socialMedia": {
+        "title": "Follow Us",
+        "twitter": "Twitter",
+        "instagram": "Instagram"
+      },
+      "location": {
+        "title": "Our Location",
+        "iframeTitle": "Our Location"
+      },
+      "contactForm": {
+        "successMessage": "Message sent successfully!",
+        "errorMessage": "Failed to send message. Please try again.",
+        "generalErrorMessage": "An error occurred. Please try again later.",
+        "form": {
+          "firstName": {
+            "label": "First Name*",
+            "placeholder": "John",
+            "error": "First name is required."
+          },
+          "lastName": {
+            "label": "Last Name",
+            "placeholder": "Doe"
+          },
+          "email": {
+            "label": "Email*",
+            "placeholder": "john.doe@example.com",
+            "error": "A valid email is required."
+          },
+          "phoneNumber": {
+            "label": "Phone Number",
+            "placeholder": "+1 234 567 8900",
+            "error": "Enter a valid phone number."
+          },
+          "subject": {
+            "label": "Select Subject",
+            "options": {
+              "generalInquiry": "General Inquiry",
+              "partnerships": "Partnerships",
+              "projectProposal": "Project Proposal",
+              "other": "Other"
+            }
+          },
+          "message": {
+            "label": "Message*",
+            "placeholder": "Write your message...",
+            "error": "Message is required."
+          },
+          "consent": {
+            "label": "I consent to the processing of my personal data.*",
+            "error": "Consent is required."
+          },
+          "submitButton": {
+            "sending": "Sending...",
+            "sendMessage": "Send Message"
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,17 @@
+
+
+{
+    "language": {
+      "english": "English",
+      "chinese": "Chinese",
+      "portuguese": "Portuguese"
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "menu": "Toggle menu"
+  }

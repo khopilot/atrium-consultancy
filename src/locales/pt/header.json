@@ -1,0 +1,15 @@
+{
+    "title": "Meu Site",
+    "nav": {
+      "home": "Início",
+      "about": "Sobre",
+      "services": "Serviços",
+      "projects": "Projetos",
+      "contact": "Contato"
+    },
+    "language": "Idioma",
+    "english": "Inglês",
+    "chinese": "Chinês",
+    "portuguese": "Português",
+    "menu": "Alternar menu"
+  }
