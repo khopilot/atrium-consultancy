@@ -283,7 +283,7 @@ const NavItem: React.FC<NavItemProps> = ({ icon, text, onClick, isActive }) => {
 
 interface MobileNavItemProps {
   icon: React.ReactNode;
-  onClick: () => void;
+  onClick: (e: React.MouseEvent) => void;
   isActive: boolean;
   label: string;
 }
