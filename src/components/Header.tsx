@@ -1,26 +1,25 @@
-// src/components/Header.tsx
 import React, { useState, useEffect } from 'react';
 import { Home, Users, Briefcase, Grid, MessageCircle, Menu, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom'; // Use React Router's useNavigate
+import { useNavigate } from 'react-router-dom';
 
 interface HeaderProps {
   setCurrentPage: (page: string) => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ setCurrentPage }) => {
-  const { t, i18n } = useTranslation('header'); // Using 'header' namespace
-  const navigate = useNavigate(); // Initialize navigate
+  const { t, i18n } = useTranslation('header');
+  const navigate = useNavigate();
   const [activePage, setActivePage] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
+  const [isMobileLanguageMenuOpen, setIsMobileLanguageMenuOpen] = useState(false);
 
-  // Update active page based on current route
   useEffect(() => {
     const path = window.location.pathname.replace('/', '') || 'home';
     setActivePage(path);
-  }, []); // Removed window.location.pathname from dependencies
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,26 +33,39 @@ const Header: React.FC<HeaderProps> = ({ setCurrentPage }) => {
     setActivePage(page);
     setCurrentPage(page);
     setIsMenuOpen(false);
+    setIsMobileLanguageMenuOpen(false);
     
-    // Use navigate instead of router.push
     if (page === 'home') {
       navigate('/');
     } else {
       navigate(`/${page}`);
     }
+
+    // Scroll to top after navigation
+    window.scrollTo(0, 0);
   };
 
   const toggleLanguageMenu = () => {
     setIsLanguageMenuOpen(!isLanguageMenuOpen);
   };
 
-  // Close menus when clicking outside
+  const toggleMobileLanguageMenu = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsMobileLanguageMenuOpen(!isMobileLanguageMenuOpen);
+  };
+
+  const handleMobileLanguageChange = (lang: string) => {
+    i18n.changeLanguage(lang);
+    setIsMobileLanguageMenuOpen(false);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (!target.closest('.language-selector') && !target.closest('.mobile-menu')) {
+      if (!target.closest('.language-selector') && !target.closest('.mobile-menu') && !target.closest('.mobile-language-menu')) {
         setIsLanguageMenuOpen(false);
         setIsMenuOpen(false);
+        setIsMobileLanguageMenuOpen(false);
       }
     };
 
@@ -106,7 +118,6 @@ const Header: React.FC<HeaderProps> = ({ setCurrentPage }) => {
                 onClick={() => handleNavigation('contact')}
                 isActive={activePage === 'contact'}
               />
-              {/* Add language-selector class */}
               <div className="language-selector">
                 <LanguageSelector
                   isOpen={isLanguageMenuOpen}
@@ -115,7 +126,6 @@ const Header: React.FC<HeaderProps> = ({ setCurrentPage }) => {
               </div>
             </ul>
           ) : (
-            // Scrolled Menu with Language Selector
             <div className="flex items-center justify-between">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -124,7 +134,6 @@ const Header: React.FC<HeaderProps> = ({ setCurrentPage }) => {
               >
                 <Menu size={24} />
               </button>
-              {/* Add language-selector class */}
               <div className="language-selector">
                 <LanguageSelector
                   isOpen={isLanguageMenuOpen}
@@ -176,6 +185,33 @@ const Header: React.FC<HeaderProps> = ({ setCurrentPage }) => {
         role="navigation"
         aria-label="Mobile navigation"
       >
+        {/* Mobile Language Menu Popup */}
+        {isMobileLanguageMenuOpen && (
+          <div className="mobile-language-menu absolute bottom-full left-1/2 -translate-x-1/2 mb-4 py-2 w-40 bg-white rounded-lg shadow-xl z-20 border border-black">
+            <button
+              onClick={() => handleMobileLanguageChange('en')}
+              className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100
+                ${i18n.language === 'en' ? 'bg-gray-50 font-medium' : ''}`}
+            >
+              {t('language.english')}
+            </button>
+            <button
+              onClick={() => handleMobileLanguageChange('zh')}
+              className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100
+                ${i18n.language === 'zh' ? 'bg-gray-50 font-medium' : ''}`}
+            >
+              {t('language.chinese')}
+            </button>
+            <button
+              onClick={() => handleMobileLanguageChange('pt')}
+              className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100
+                ${i18n.language === 'pt' ? 'bg-gray-50 font-medium' : ''}`}
+            >
+              {t('language.portuguese')}
+            </button>
+          </div>
+        )}
+
         <ul className="flex justify-around items-center py-2 px-4">
           <MobileNavItem
             icon={<Home size={24} />}
@@ -207,18 +243,11 @@ const Header: React.FC<HeaderProps> = ({ setCurrentPage }) => {
             isActive={activePage === 'contact'}
             label={t('nav.contact')}
           />
-          {/* Language Selector as a MobileNavItem */}
           <MobileNavItem
             icon={<Globe size={24} />}
-            onClick={toggleLanguageMenu}
-            isActive={false}
-            label={
-              i18n.language === 'en'
-                ? t('language.english')
-                : i18n.language === 'zh'
-                ? t('language.chinese')
-                : t('language.portuguese')
-            }
+            onClick={toggleMobileLanguageMenu}
+            isActive={isMobileLanguageMenuOpen}
+            label={t('language.select')}
           />
         </ul>
       </nav>

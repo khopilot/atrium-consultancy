@@ -3,7 +3,7 @@
       "introduction": {
         "title": "ATRIUM CONSULTANCY",
         "subtitle": "Empowering Elite Investments in Southeast Asia",
-        "description": "Our mission is to provide unparalleled access to exclusive investment opportunities, guiding discerning investors through the complexities of Southeast Asian markets with expertise, discretion, and unwavering commitment to success.",
+        "description": "Our mission is to provide unparalleled access to exclusive investment opportunities, guiding investors through the complexities of Southeast Asian markets with expertise, discretion and unwavering commitment to success.",
         "button": "Learn More"
       },
       "commitment": {
@@ -11,11 +11,11 @@
         "cards": {
           "legitimacy": {
             "title": "Legitimacy",
-            "description": "ATRIUM CONSULTANCY operates with full compliance to international and local regulations. Our operations are transparent, and we maintain the highest standards of professional conduct."
+            "description": "ATRIUM CONSULTANCY operates with full compliance to international and local regulations. Our operations are transparent, and maintain the highest standards of professional conduct."
           },
           "ethicalCommitment": {
             "title": "Ethical Commitment",
-            "description": "We are committed to ethical business practices, ensuring that all investments and transactions we facilitate are socially responsible and contribute positively to the regions we operate in."
+            "description": "We are committed to ethical business practices, ensuring that all investments are socially responsible and contribute positively to the regions they operate in."
           }
         }
       },
@@ -24,9 +24,9 @@
         "cards": {
           "strategicAssetAcquisitions": {
             "title": "Strategic Asset Acquisitions",
-            "description": "Facilitating high-value deals with unprecedented discretion across Southeast Asia. Our network and expertise unlock doors to exclusive opportunities often hidden from the public eye.",
+            "description": "Facilitating high-value deals with discretion across Southeast Asia. Our network and expertise unlock doors to exclusive opportunities often hidden from the public eye.",
             "achievements": [
-              "Orchestrated confidential acquisitions exceeding $1 billion in total value",
+              "Orchestrated confidential acquisitions in over 8 countries",
               "Developed an exclusive network spanning 15+ countries",
               "Implemented proprietary strategies for sensitive, high-stakes transactions"
             ]
@@ -35,9 +35,9 @@
             "title": "Elite Advisory Services",
             "description": "Providing unmatched guidance for complex international investments. Our seasoned experts navigate the intricate landscape of Southeast Asian markets with precision and insight.",
             "achievements": [
-              "Steered cross-border investment deals surpassing $5 billion in cumulative value",
+              "Steered cross-border investment deals for venture capitalists, facilitating the entry into high-growth markets with precise risk assessments.",
               "Crafted bespoke strategies for diverse cultural and regulatory landscapes",
-              "Achieved a 98% success rate in closing intricate, multi-jurisdictional deals"
+              "Achieved a high success rate in closing intricate, multi-jurisdictional deals"
             ]
           }
         }
@@ -55,7 +55,7 @@
           },
           "strategicPartnerships": {
             "title": "Strategic Partnerships",
-            "description": "Leverage our extensive network of industry leaders, government officials, and local experts to forge powerful alliances that drive your investment success in Southeast Asia."
+            "description": "Leverage our extensive network of industry leaders, government officials, and local experts to forge powerful alliances that drive your investments in Southeast Asia."
           },
           "comprehensiveDueDiligence": {
             "title": "Comprehensive Due Diligence",
@@ -69,27 +69,27 @@
         "items": [
           {
             "title": "Major Infrastructure Acquisitions",
-            "description": "Facilitation of strategic infrastructure asset acquisitions exceeding $500 million, successfully navigating complex regulatory environments across multiple Southeast Asian countries."
+            "description": "Facilitation of strategic infrastructure acquisitions, successfully navigating regulatory environments across multiple Southeast Asian countries."
           },
           {
             "title": "Tech Startup Portfolio Expansions",
-            "description": "Guidance for sovereign wealth funds in building portfolios up to $200 million, focusing on high-growth tech startups in emerging Southeast Asian markets."
+            "description": "Guidance for sovereign wealth funds in building portfolios, focusing on high-growth tech startups in emerging Southeast Asian markets."
           },
           {
             "title": "Luxury Real Estate Developments",
-            "description": "Orchestration of joint ventures for luxury resort developments valued over $750 million, uniting international investors with local partners."
+            "description": "Orchestration of joint ventures for luxury resort developments uniting international investors with local partners."
           },
           {
             "title": "Cross-Border M&A Transactions",
-            "description": "Successful execution of cross-border mergers and acquisitions totaling over $1 billion, streamlining complex international business integrations."
+            "description": "Successful execution of cross-border mergers and acquisitions, streamlining complex international business integrations."
           },
           {
             "title": "Sustainable Energy Projects",
-            "description": "Facilitation of renewable energy investments exceeding $300 million, contributing to the development of sustainable infrastructure across Southeast Asia."
+            "description": "Facilitation of renewable energy investments and the development of sustainable infrastructure across Southeast Asia."
           },
           {
             "title": "Advanced Technology Implementations",
-            "description": "Guidance on AI and blockchain technology integrations for government entities, resulting in efficiency improvements valued at over $100 million annually."
+            "description": "Guidance on AI and blockchain technology integrations for private entities."
           }
         ]
       },

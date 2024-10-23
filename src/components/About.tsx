@@ -14,6 +14,8 @@ import {
 } from 'lucide-react';
 import backgroundImage from '../images/Hero Image.png';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom'; // Add this import at the top of your file
+import ethicalCommitmentImage from '../images/about/54b02a8a-45ba-4e3b-96bd-1bbb00204479.jpeg';
 
 // Updated interfaces to match JSON structure
 interface Introduction {
@@ -78,7 +80,7 @@ interface Services {
 interface BenchmarkItem {
   title: string;
   description: string;
-  image: string; // {{ edit_1 }}
+  image: string;
 }
 
 interface BenchmarkAchievements {
@@ -143,15 +145,18 @@ const About: React.FC = () => {
             <h1 className="text-5xl font-bold mb-4 text-black">{introduction.title}</h1>
             <p className="text-xl mb-8 text-black">{introduction.subtitle}</p>
             <p className="text-lg mb-8 text-black">{introduction.description}</p>
-            <motion.a
-              href="/about"
-              className="bg-white text-black px-6 py-3 rounded-full inline-flex items-center hover:bg-gray-200 transition duration-300 text-lg border border-black shadow-[0_0_0_1px_rgba(0,0,0,1)]"
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {introduction.button}
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </motion.a>
+              <Link
+                to="/services"
+                className="bg-white text-black px-6 py-3 rounded-full inline-flex items-center hover:bg-gray-200 transition duration-300 text-lg border border-black shadow-[0_0_0_1px_rgba(0,0,0,1)]"
+              >
+                {introduction.button}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
       </section>
@@ -196,7 +201,7 @@ const About: React.FC = () => {
             >
               <div className="mb-6 h-48 overflow-hidden rounded-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  src={ethicalCommitmentImage}
                   alt={commitment.cards.ethicalCommitment.title}
                   className="w-full h-full object-cover"
                 />
@@ -418,41 +423,39 @@ interface BenchmarkSectionProps {
 }
 
 const BenchmarkSection: React.FC<BenchmarkSectionProps> = ({ benchmarks, title, description }) => {
+  const benchmarkImages = [
+    "https://images.unsplash.com/photo-1506755855567-92ff770e8e00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", // Infrastructure
+    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", // Tech Startup
+    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", // Luxury Real Estate
+    "https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", // Cross-Border M&A
+    "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", // Sustainable Energy
+    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"  // Advanced Technology
+  ];
+
   return (
     <section className="py-24 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <motion.h2
-          className="text-4xl font-bold mb-8 text-center"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
+      <div className="container mx-auto px-4 max-w-6xl">
+        <h2 className="font-serif text-5xl font-light text-center mb-16">
           {title}
-        </motion.h2>
-        <motion.p
-          className="text-xl text-center mb-16 max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
+        </h2>
+        <p className="text-xl text-center mb-16 max-w-4xl mx-auto">
           {description}
-        </motion.p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {benchmarks.map((benchmark, index) => (
             <motion.div
               key={index}
               className="relative overflow-hidden rounded-lg shadow-lg h-96"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center z-0"
-                style={{ backgroundImage: `url(${benchmark.image})` }} // {{ edit_2 }}
+              <img
+                src={benchmarkImages[index]}
+                alt={benchmark.title}
+                className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black opacity-60 z-10" />
-              <div className="relative z-20 h-full flex flex-col justify-end p-6 text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+              <div className="relative z-10 h-full flex flex-col justify-end p-6 text-white">
                 <h3 className="text-2xl font-semibold mb-4">{benchmark.title}</h3>
                 <p className="text-sm">{benchmark.description}</p>
               </div>

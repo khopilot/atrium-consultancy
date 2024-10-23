@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Lock, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import icosahedronImage from '../images/icosahedron@4-1728x868.png';
+import { Link } from 'react-router-dom';
 
 // Define interfaces for the translation structure
 interface HeroSection {
@@ -157,10 +158,13 @@ const Projects: React.FC = () => {
                   <ArrowRight className="w-5 h-5 mr-2 transform rotate-180" />
                   {translations.modal.buttons.back}
                 </button>
-                <button className="bg-black text-white px-6 py-2 rounded-full flex items-center">
+                <Link
+                  to="/contact"
+                  className="bg-black text-white px-6 py-2 rounded-full flex items-center"
+                >
                   <Lock className="w-5 h-5 mr-2" />
                   {translations.modal.buttons.requestAccess}
-                </button>
+                </Link>
               </div>
             </motion.div>
           </motion.div>

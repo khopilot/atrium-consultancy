@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next'; // Import useTranslation
 import icosahedronImage from '../images/icosahedron@4-1728x868.png';
 import primroseImage from '../images/Dreamsville.png';
+import { Link } from 'react-router-dom'; // Make sure to import Link
+import handshakeImage from '../images/home/hanshake asia .jpeg';
 
 const Home: React.FC = () => {
   const { t } = useTranslation('home'); // Initialize translation hook
@@ -66,15 +68,18 @@ const Home: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
             >
-              <motion.a
-                href="/services"
-                className="bg-white text-black px-6 py-3 rounded-full inline-flex items-center hover:bg-gray-200 transition duration-300 text-lg border border-black shadow-[0_0_0_1px_rgba(0,0,0,1)]"
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {t('exploreOpportunities')}
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </motion.a>
+                <Link
+                  to="/projects"
+                  className="bg-white text-black px-6 py-3 rounded-full inline-flex items-center hover:bg-gray-200 transition duration-300 text-lg border border-black shadow-[0_0_0_1px_rgba(0,0,0,1)]"
+                >
+                  {t('exploreOpportunities')}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
         </motion.div>
@@ -212,7 +217,7 @@ const WhyUsSection: React.FC = () => {
               t('whyUsSection.benefitFromPartnerships') + " " + "Key government decision-makers and policy influencers",
               t('whyUsSection.benefitFromPartnerships') + " " + "Top-tier legal and financial institutions",
             ]}
-            imageUrl="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+            imageUrl={handshakeImage}
           />
 
           <OpportunityCard

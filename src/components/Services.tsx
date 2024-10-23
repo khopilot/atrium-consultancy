@@ -72,6 +72,16 @@ const Services: React.FC = () => {
     return icons[iconName as keyof typeof icons];
   };
 
+  // Define specific image URLs for each opportunity card
+  const opportunityImages = [
+    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+    "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80", // New image for "Optimize Your Investment Returns"
+    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80", // New image for "Seamless Expansion into South Asian Markets"
+    "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+    "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+  ];
+
   return (
     <div className="bg-white">
       <motion.section 
@@ -143,7 +153,7 @@ const Services: React.FC = () => {
               description={card.description}
               ctaText={card.ctaText}
               ctaLink={card.ctaLink}
-              imageUrl={`https://images.unsplash.com/photo-${index + 1}?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80`}
+              imageUrl={opportunityImages[index]}
             />
           ))}
         </div>

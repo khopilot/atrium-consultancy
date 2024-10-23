@@ -1,8 +1,8 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import {
-  Phone, Mail, MapPin, Twitter, Instagram, Send, ArrowRight,
+  Phone, Mail, MapPin, Send, ArrowRight,
 } from 'lucide-react';
 import backgroundImage from '../images/Mind House.png';
 
@@ -85,18 +85,18 @@ interface FormData {
   consent: boolean;
 }
 
-const Contact = () => {
+const Contact: React.FC = () => {
   const { t, ready } = useTranslation('contact');
   const translations = t('contact', { returnObjects: true }) as ContactTranslations;
 
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     phoneNumber: '',
-    subject: translations.contactForm.form.subject.options.generalInquiry,
+    subject: 'General Inquiry',
     message: '',
-    consent: false,
+    consent: false
   });
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
@@ -107,13 +107,11 @@ const Contact = () => {
     return <div className="h-screen flex items-center justify-center">Loading...</div>;
   }
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, type, value, checked } = e.target as HTMLInputElement;
-    setFormData(prevData => ({
-      ...prevData,
-      [name]: type === 'checkbox' ? checked : value,
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
     }));
     setErrors(prevErrors => ({ ...prevErrors, [name]: '' }));
   };
@@ -213,10 +211,12 @@ const Contact = () => {
             </motion.p>
             <motion.a
               href="#contact-form"
-              className="bg-white text-black px-8 py-4 rounded-full inline-flex items-center font-semibold text-lg hover:bg-gray-200 transition duration-300"
+              className="bg-white text-black px-8 py-4 rounded-full inline-flex items-center font-semibold text-lg hover:bg-black hover:text-white transition duration-300 border-2 border-white"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               {translations.heroSection.cta}
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -225,226 +225,227 @@ const Contact = () => {
         </div>
       </section>
 
-      <div className="flex flex-col md:flex-row">
-        {/* Left Side - Contact Information */}
-        <div className="md:w-1/2 bg-black text-white p-8">
-          <h2 className="text-3xl font-bold mb-4">{translations.contactContent.heading}</h2>
-          <p className="mb-8">{translations.contactContent.description}</p>
-
-          <div className="space-y-4">
-            <p className="flex items-center">
-              <Phone className="mr-4" />
-              {translations.contactInformation.phone}
-            </p>
-            <p className="flex items-center">
-              <Mail className="mr-4" />
-              <a href={`mailto:${translations.contactInformation.email}`} className="underline">
-                {translations.contactInformation.email}
-              </a>
-            </p>
-            <p className="flex items-center">
-              <MapPin className="mr-4" />
-              {translations.contactInformation.address}
-            </p>
-          </div>
-
-          <div className="mt-12">
-            <h3 className="text-xl font-bold mb-4">{translations.companyInfo.title}</h3>
-            <p className="mb-4">{translations.companyInfo.tagline}</p>
-          </div>
-
-          <div className="mt-8 flex space-x-4">
-            <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
-              <Twitter className="cursor-pointer" />
-            </a>
-            <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
-              <Instagram className="cursor-pointer" />
-            </a>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-xl font-bold mb-4">{translations.location.title}</h3>
-            <iframe
-              title={translations.location.iframeTitle}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387144.5070661744!2d113.516331!3d22.198745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3401f4c1c1c1c1c1%3A0x1234567890abcdef!2s61%20Avenida%20de%20Almeida%20Ribeiro%2C%2013F%20-%20A%20Circle%20Square%20Building%2C%20Macau%2C%20Macau%20SAR!5e0!3m2!1sen!2smo!4v1610000000000!5m2!1sen!2smo"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
-          </div>
-        </div>
-
-        {/* Right Side - Contact Form */}
-        <div className="md:w-1/2 p-8 flex flex-col" id="contact-form">
-          {submitSuccess && (
-            <div className={`mb-4 p-4 rounded ${
-              submitSuccess === translations.contactForm.successMessage
-                ? 'bg-green-100 text-green-800'
-                : 'bg-red-100 text-red-800'
-            }`}>
-              {submitSuccess}
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit} className="mb-8">
-            <div className="flex mb-4">
-              <div className="w-1/2 mr-2">
-                <label htmlFor="firstName" className="block mb-2 font-medium">
-                  {translations.contactForm.form.firstName.label}
-                </label>
-                <input
-                  id="firstName"
-                  type="text"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  className={`w-full p-2 border-b ${
-                    errors.firstName ? 'border-red-500' : 'border-gray-300'
-                  } focus:outline-none focus:border-black`}
-                  placeholder={translations.contactForm.form.firstName.placeholder}
-                />
-                {errors.firstName && (
-                  <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
-                )}
-              </div>
-              <div className="w-1/2 ml-2">
-                <label htmlFor="lastName" className="block mb-2 font-medium">
-                  {translations.contactForm.form.lastName.label}
-                </label>
-                <input
-                  id="lastName"
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  className="w-full p-2 border-b border-gray-300 focus:outline-none focus:border-black"
-                  placeholder={translations.contactForm.form.lastName.placeholder}
-                />
-              </div>
-            </div>
-
-            <div className="flex mb-4">
-              <div className="w-1/2 mr-2">
-                <label htmlFor="email" className="block mb-2 font-medium">
-                  {translations.contactForm.form.email.label}
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={`w-full p-2 border-b ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
-                  } focus:outline-none focus:border-black`}
-                  placeholder={translations.contactForm.form.email.placeholder}
-                />
-                {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-                )}
-              </div>
-              <div className="w-1/2 ml-2">
-                <label htmlFor="phoneNumber" className="block mb-2 font-medium">
-                  {translations.contactForm.form.phoneNumber.label}
-                </label>
-                <input
-                  id="phoneNumber"
-                  type="tel"
-                  name="phoneNumber"
-                  value={formData.phoneNumber}
-                  onChange={handleChange}
-                  className={`w-full p-2 border-b ${
-                    errors.phoneNumber ? 'border-red-500' : 'border-gray-300'
-                  } focus:outline-none focus:border-black`}
-                  placeholder={translations.contactForm.form.phoneNumber.placeholder}
-                />
-                {errors.phoneNumber && (
-                  <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>
-                )}
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <label htmlFor="subject" className="block mb-2 font-medium">
-                {translations.contactForm.form.subject.label}
-              </label>
-              <select
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className="w-full p-2 border-b border-gray-300 focus:outline-none focus:border-black"
-              >
-                <option value={translations.contactForm.form.subject.options.generalInquiry}>
-                  {translations.contactForm.form.subject.options.generalInquiry}
-                </option>
-                <option value={translations.contactForm.form.subject.options.partnerships}>
-                  {translations.contactForm.form.subject.options.partnerships}
-                </option>
-                <option value={translations.contactForm.form.subject.options.projectProposal}>
-                  {translations.contactForm.form.subject.options.projectProposal}
-                </option>
-                <option value={translations.contactForm.form.subject.options.other}>
-                  {translations.contactForm.form.subject.options.other}
-                </option>
-              </select>
-            </div>
-
-            <div className="mb-4">
-              <label htmlFor="message" className="block mb-2 font-medium">
-                {translations.contactForm.form.message.label}
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className={`w-full p-2 border-b ${
-                  errors.message ? 'border-red-500' : 'border-gray-300'
-                } focus:outline-none focus:border-black`}
-                rows={4}
-                placeholder={translations.contactForm.form.message.placeholder}
-              ></textarea>
-              {errors.message && (
-                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
-              )}
-            </div>
-
-            <div className="mb-4">
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="consent"
-                  checked={formData.consent}
-                  onChange={handleChange}
-                  className="mr-2"
-                />
-                {translations.contactForm.form.consent.label}
-              </label>
-              {errors.consent && (
-                <p className="text-red-500 text-sm mt-1">
-                  {translations.contactForm.form.consent.error}
-                </p>
-              )}
-            </div>
-
-            <button
-              type="submit"
-              className="bg-black text-white px-6 py-2 rounded-full flex items-center justify-center disabled:opacity-50"
-              disabled={isSubmitting}
+      {/* Contact Information and Form Section */}
+      <div className="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.h1 
+            className="text-4xl font-bold text-center mb-12"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {translations.contactContent.heading}
+          </motion.h1>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Contact Information Card */}
+            <motion.div 
+              className="bg-white p-8 rounded-lg shadow-lg"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
-              {isSubmitting ? (
-                <span>{translations.contactForm.form.submitButton.sending}</span>
-              ) : (
-                <>
-                  {translations.contactForm.form.submitButton.sendMessage}
-                  <Send className="ml-2" size={18} />
-                </>
+              <h2 className="text-2xl font-semibold mb-6">{translations.contactInformation.title}</h2>
+              <p className="mb-6">{translations.contactContent.description}</p>
+              
+              <div className="space-y-4">
+                <p className="flex items-center"><Phone className="mr-4" /> {translations.contactInformation.phone}</p>
+                <p className="flex items-center"><Mail className="mr-4" /> {translations.contactInformation.email}</p>
+                <p className="flex items-center"><MapPin className="mr-4" /> {translations.contactInformation.address}</p>
+              </div>
+
+              <div className="mt-8">
+                <h3 className="text-xl font-semibold mb-2">{translations.companyInfo.title}</h3>
+                <p>{translations.companyInfo.tagline}</p>
+              </div>
+
+              <div className="mt-8">
+                <h3 className="text-xl font-semibold mb-4">{translations.location.title}</h3>
+                <div className="aspect-w-16 aspect-h-9">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.9245521880396!2d113.53999631744384!3d22.19137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34017ae0e5bdcbe1%3A0xf7f84d8c8a5507f9!2sAvenida%20de%20Almeida%20Ribeiro%2C%20Macau!5e0!3m2!1sen!2sus!4v1625764215076!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0 }} 
+                    allowFullScreen 
+                    loading="lazy"
+                    title={translations.location.iframeTitle}
+                  ></iframe>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Contact Form Card */}
+            <motion.div 
+              className="bg-white p-8 rounded-lg shadow-lg"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              id="contact-form"
+            >
+              <h2 className="text-2xl font-semibold mb-6">{translations.contactForm.form.submitButton.sendMessage}</h2>
+              {submitSuccess && (
+                <div className={`mb-4 p-2 rounded ${
+                  submitSuccess === translations.contactForm.successMessage
+                    ? 'bg-green-100 text-green-800'
+                    : 'bg-red-100 text-red-800'
+                }`}>
+                  {submitSuccess}
+                </div>
               )}
-            </button>
-          </form>
+              <form onSubmit={handleSubmit}>
+                <div className="flex mb-4">
+                  <div className="w-1/2 mr-2">
+                    <label htmlFor="firstName" className="block mb-2 font-medium">
+                      {translations.contactForm.form.firstName.label}
+                    </label>
+                    <input
+                      id="firstName"
+                      type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      className={`w-full p-2 border-b ${
+                        errors.firstName ? 'border-red-500' : 'border-gray-300'
+                      } focus:outline-none focus:border-black`}
+                      placeholder={translations.contactForm.form.firstName.placeholder}
+                    />
+                    {errors.firstName && (
+                      <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
+                    )}
+                  </div>
+                  <div className="w-1/2 ml-2">
+                    <label htmlFor="lastName" className="block mb-2 font-medium">
+                      {translations.contactForm.form.lastName.label}
+                    </label>
+                    <input
+                      id="lastName"
+                      type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      className="w-full p-2 border-b border-gray-300 focus:outline-none focus:border-black"
+                      placeholder={translations.contactForm.form.lastName.placeholder}
+                    />
+                  </div>
+                </div>
+
+                <div className="flex mb-4">
+                  <div className="w-1/2 mr-2">
+                    <label htmlFor="email" className="block mb-2 font-medium">
+                      {translations.contactForm.form.email.label}
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className={`w-full p-2 border-b ${
+                        errors.email ? 'border-red-500' : 'border-gray-300'
+                      } focus:outline-none focus:border-black`}
+                      placeholder={translations.contactForm.form.email.placeholder}
+                    />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                    )}
+                  </div>
+                  <div className="w-1/2 ml-2">
+                    <label htmlFor="phoneNumber" className="block mb-2 font-medium">
+                      {translations.contactForm.form.phoneNumber.label}
+                    </label>
+                    <input
+                      id="phoneNumber"
+                      type="tel"
+                      name="phoneNumber"
+                      value={formData.phoneNumber}
+                      onChange={handleChange}
+                      className={`w-full p-2 border-b ${
+                        errors.phoneNumber ? 'border-red-500' : 'border-gray-300'
+                      } focus:outline-none focus:border-black`}
+                      placeholder={translations.contactForm.form.phoneNumber.placeholder}
+                    />
+                    {errors.phoneNumber && (
+                      <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="subject" className="block mb-2 font-medium">
+                    {translations.contactForm.form.subject.label}
+                  </label>
+                  <select
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full p-2 border-b border-gray-300 focus:outline-none focus:border-black"
+                  >
+                    <option value={translations.contactForm.form.subject.options.generalInquiry}>
+                      {translations.contactForm.form.subject.options.generalInquiry}
+                    </option>
+                    <option value={translations.contactForm.form.subject.options.partnerships}>
+                      {translations.contactForm.form.subject.options.partnerships}
+                    </option>
+                    <option value={translations.contactForm.form.subject.options.projectProposal}>
+                      {translations.contactForm.form.subject.options.projectProposal}
+                    </option>
+                    <option value={translations.contactForm.form.subject.options.other}>
+                      {translations.contactForm.form.subject.options.other}
+                    </option>
+                  </select>
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="message" className="block mb-2 font-medium">
+                    {translations.contactForm.form.message.label}
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className={`w-full p-2 border-b ${
+                      errors.message ? 'border-red-500' : 'border-gray-300'
+                    } focus:outline-none focus:border-black`}
+                    rows={4}
+                    placeholder={translations.contactForm.form.message.placeholder}
+                  ></textarea>
+                  {errors.message && (
+                    <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                  )}
+                </div>
+
+                <div className="mb-4">
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      name="consent"
+                      checked={formData.consent}
+                      onChange={handleChange}
+                      className="mr-2"
+                    />
+                    {translations.contactForm.form.consent.label}
+                  </label>
+                  {errors.consent && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {translations.contactForm.form.consent.error}
+                    </p>
+                  )}
+                </div>
+
+                <button 
+                  type="submit" 
+                  className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? translations.contactForm.form.submitButton.sending : translations.contactForm.form.submitButton.sendMessage}
+                  <Send className="ml-2 h-5 w-5" />
+                </button>
+              </form>
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>
