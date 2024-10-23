@@ -166,7 +166,15 @@ const Home: React.FC = () => {
 };
 
 const WhyUsSection: React.FC = () => {
-  const { t } = useTranslation('home'); // Initialize translation hook
+  const { t } = useTranslation('home');
+
+  const projectLinkOptions = [
+    "Enhance your negotiation power",
+    "Discover market insights",
+    "Explore real estate prospects",
+    "Maximize your investment potential",
+    "Streamline your market entry"
+  ];
 
   return (
     <section className="bg-white text-black py-32">
@@ -186,12 +194,13 @@ const WhyUsSection: React.FC = () => {
             description={t('opportunityCards.unparalleledAccess.description')}
             additionalInfo={t('whyUsSection.gainInsiderAccess')}
             bulletPoints={[
-              t('whyUsSection.gainInsiderAccess') + " " + "Emerging tech startups poised for exponential growth",
-              t('whyUsSection.gainInsiderAccess') + " " + "Prime real estate in developing urban centers",
-              t('whyUsSection.gainInsiderAccess') + " " + "Government infrastructure projects with long-term value",
+              "Emerging tech startups poised for exponential growth",
+              "Prime real estate in developing urban centers",
+              "Government infrastructure projects with long-term value"
             ]}
             imageUrl={primroseImage}
             imageClassName="w-full h-64 object-cover"
+            projectLinkOptions={projectLinkOptions}
           />
 
           <OpportunityCard
@@ -200,11 +209,12 @@ const WhyUsSection: React.FC = () => {
             description={t('opportunityCards.discretionAssured.description')}
             additionalInfo={t('whyUsSection.ourCommitmentIncludes')}
             bulletPoints={[
-              t('whyUsSection.ourCommitmentIncludes') + " " + "Secure communication channels for all client interactions",
-              t('whyUsSection.ourCommitmentIncludes') + " " + "Anonymized transaction processes to protect your identity",
-              t('whyUsSection.ourCommitmentIncludes') + " " + "Strict non-disclosure agreements with all involved parties",
+              "Secure communication channels for all client interactions",
+              "Anonymized transaction processes to protect your identity",
+              "Strict non-disclosure agreements with all involved parties"
             ]}
             imageUrl="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+            projectLinkOptions={projectLinkOptions}
           />
 
           <OpportunityCard
@@ -213,11 +223,12 @@ const WhyUsSection: React.FC = () => {
             description={t('opportunityCards.strategicPartnerships.description')}
             additionalInfo={t('whyUsSection.benefitFromPartnerships')}
             bulletPoints={[
-              t('whyUsSection.benefitFromPartnerships') + " " + "Influential business magnates and industry pioneers",
-              t('whyUsSection.benefitFromPartnerships') + " " + "Key government decision-makers and policy influencers",
-              t('whyUsSection.benefitFromPartnerships') + " " + "Top-tier legal and financial institutions",
+              "Influential business magnates and industry pioneers",
+              "Key government decision-makers and policy influencers",
+              "Top-tier legal and financial institutions"
             ]}
             imageUrl={handshakeImage}
+            projectLinkOptions={projectLinkOptions}
           />
 
           <OpportunityCard
@@ -226,11 +237,12 @@ const WhyUsSection: React.FC = () => {
             description={t('opportunityCards.tailoredInvestmentSolutions.description')}
             additionalInfo={t('whyUsSection.ourTailoredSolutions')}
             bulletPoints={[
-              t('whyUsSection.ourTailoredSolutions') + " " + "Comprehensive risk assessment and mitigation strategies",
-              t('whyUsSection.ourTailoredSolutions') + " " + "Custom portfolio diversification across emerging sectors",
-              t('whyUsSection.ourTailoredSolutions') + " " + "Adaptive investment timelines to maximize returns",
+              "Comprehensive risk assessment and mitigation strategies",
+              "Custom portfolio diversification across emerging sectors",
+              "Adaptive investment timelines to maximize returns"
             ]}
             imageUrl="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+            projectLinkOptions={projectLinkOptions}
           />
         </div>
       </div>
@@ -246,6 +258,7 @@ interface OpportunityCardProps {
   bulletPoints: string[];
   imageUrl: string;
   imageClassName?: string;
+  projectLinkOptions: string[];
 }
 
 const OpportunityCard: React.FC<OpportunityCardProps> = ({
@@ -256,8 +269,9 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({
   bulletPoints,
   imageUrl,
   imageClassName,
+  projectLinkOptions,
 }) => {
-  const { t } = useTranslation('home'); // Initialize translation hook if needed
+  const { t } = useTranslation('home');
 
   return (
     <motion.div
@@ -276,15 +290,21 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({
       <div className="md:w-1/2 space-y-6">
         <div className="flex items-center gap-4">
           {icon}
-          <h3 className="text-4xl font-light">{t(title)}</h3> {/* Use t for title */}
+          <h3 className="text-4xl font-light">{title}</h3>
         </div>
-        <p className="text-xl text-gray-700 leading-relaxed">{t(description)}</p> {/* Use t for description */}
+        <p className="text-xl text-gray-700 leading-relaxed">{description}</p>
         <div>
-          <h4 className="text-2xl font-light mb-4">{t(additionalInfo)}</h4> {/* Use t for additionalInfo */}
+          <h4 className="text-2xl font-light mb-4">{additionalInfo}</h4>
           <ul className="list-disc list-inside space-y-2">
             {bulletPoints.map((point, index) => (
               <li key={index} className="text-lg text-gray-700">
-                {t(point)} {/* Use t for bullet points */}
+                {projectLinkOptions.includes(t(point)) ? (
+                  <Link to="/projects" className="hover:underline">
+                    {t(point)}
+                  </Link>
+                ) : (
+                  t(point)
+                )}
               </li>
             ))}
           </ul>
