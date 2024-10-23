@@ -2,6 +2,7 @@ import React from 'react';
 import { Briefcase, FileSearch, Globe, Building, TrendingUp, Users, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 // Define interfaces for the translation structure
 interface HeroSection {
@@ -82,6 +83,15 @@ const Services: React.FC = () => {
     "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
   ];
 
+  // Define the options that should link to the projects page
+  const projectLinkOptions = [
+    "Enhance your negotiation power",
+    "Discover market insights",
+    "Explore real estate prospects",
+    "Maximize your investment potential",
+    "Streamline your market entry"
+  ];
+
   return (
     <div className="bg-white">
       <motion.section 
@@ -154,6 +164,7 @@ const Services: React.FC = () => {
               ctaText={card.ctaText}
               ctaLink={card.ctaLink}
               imageUrl={opportunityImages[index]}
+              projectLinkOptions={projectLinkOptions}
             />
           ))}
         </div>
@@ -189,10 +200,11 @@ interface OpportunityCardProps {
   ctaText: string;
   ctaLink: string;
   imageUrl: string;
+  projectLinkOptions: string[];
 }
 
 const OpportunityCard: React.FC<OpportunityCardProps> = ({
-  icon, title, description, ctaText, ctaLink, imageUrl
+  icon, title, description, ctaText, ctaLink, imageUrl, projectLinkOptions
 }) => {
   return (
     <div className="flex flex-col md:flex-row items-center">
@@ -200,13 +212,23 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({
         <div className="mb-8">{icon}</div>
         <h3 className="text-3xl font-semibold mb-6 text-gray-900">{title}</h3>
         <p className="text-gray-700 leading-relaxed mb-8">{description}</p>
-        <a 
-          href={ctaLink} 
-          className="inline-flex items-center text-gray-900 font-medium hover:text-gray-700 transition duration-300"
-        >
-          {ctaText}
-          <ArrowRight className="ml-2 h-5 w-5" />
-        </a>
+        {projectLinkOptions.includes(ctaText) ? (
+          <Link 
+            to="/projects" 
+            className="inline-flex items-center text-gray-900 font-medium hover:text-gray-700 transition duration-300"
+          >
+            {ctaText}
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
+        ) : (
+          <a 
+            href={ctaLink} 
+            className="inline-flex items-center text-gray-900 font-medium hover:text-gray-700 transition duration-300"
+          >
+            {ctaText}
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </a>
+        )}
       </div>
       <div className="md:w-1/2">
         <img 
