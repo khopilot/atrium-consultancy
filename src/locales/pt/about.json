@@ -1,107 +1,106 @@
 {
-    "about": {
-      "introduction": {
-        "title": "ATRIUM CONSULTANCY",
-        "subtitle": "Empoderando Investimentos de Elite no Sudeste Asiático",
-        "description": "Nossa missão é fornecer acesso incomparável a oportunidades de investimento exclusivas, guiando investidores exigentes através das complexidades dos mercados do Sudeste Asiático com expertise, discrição e compromisso inabalável com o sucesso.",
-        "button": "Saiba Mais"
-      },
-      "commitment": {
-        "title": "Nosso Compromisso com a Excelência",
-        "cards": {
-          "legitimacy": {
-            "title": "Legitimidade",
-            "description": "ATRIUM CONSULTANCY opera com total conformidade com regulamentações internacionais e locais. Nossas operações são transparentes e mantemos os mais altos padrões de conduta profissional."
-          },
-          "ethicalCommitment": {
-            "title": "Compromisso Ético",
-            "description": "Estamos comprometidos com práticas comerciais éticas, garantindo que todos os investimentos e transações que facilitamos sejam socialmente responsáveis e contribuam positivamente para as regiões em que operamos."
-          }
+  "about": {
+    "introduction": {
+      "title": "ATRIUM CONSULTORIA",
+      "subtitle": "Capacitando Investimentos de Elite no Sudeste Asiático",
+      "description": "Nossa missão é fornecer acesso incomparável a oportunidades exclusivas de investimento, guiando investidores através das complexidades dos mercados do Sudeste Asiático com expertise, discrição e compromisso inabalável com o sucesso.",
+      "button": "Saiba Mais"
+    },
+    "commitment": {
+      "title": "Nosso Compromisso com a Excelência",
+      "cards": {
+        "legitimacy": {
+          "title": "Legitimidade",
+          "description": "A ATRIUM CONSULTORIA opera em total conformidade com regulamentações internacionais e locais. Nossas operações são transparentes e mantêm os mais altos padrões de conduta profissional."
+        },
+        "ethicalCommitment": {
+          "title": "Compromisso Ético",
+          "description": "Estamos comprometidos com práticas comerciais éticas, garantindo que todos os investimentos sejam socialmente responsáveis e contribuam positivamente para as regiões em que operam."
         }
-      },
-      "expertise": {
-        "title": "Nossa Expertise & Experiência",
-        "cards": {
-          "strategicAssetAcquisitions": {
-            "title": "Aquisições Estratégicas de Ativos",
-            "description": "Facilitando negócios de alto valor com discrição sem precedentes no Sudeste Asiático. Nossa rede e expertise abrem portas para oportunidades exclusivas frequentemente ocultas dos olhos do público.",
-            "achievements": [
-              "Orquestrou aquisições confidenciais excedendo US$1 bilhão em valor total",
-              "Desenvolveu uma rede exclusiva abrangendo mais de 15 países",
-              "Implementou estratégias proprietárias para transações sensíveis e de alto risco"
-            ]
-          },
-          "eliteAdvisoryServices": {
-            "title": "Serviços de Consultoria Elite",
-            "description": "Fornecendo orientação inigualável para investimentos internacionais complexos. Nossos especialistas experientes navegam pelo intricado cenário dos mercados do Sudeste Asiático com precisão e insight.",
-            "achievements": [
-              "Conduziu negócios de investimento transfronteiriços superando US$5 bilhões em valor cumulativo",
-              "Criou estratégias sob medida para diversos ambientes culturais e regulatórios",
-              "Alcançou uma taxa de sucesso de 98% no fechamento de negócios complexos e multi-jurisdicionais"
-            ]
-          }
-        }
-      },
-      "services": {
-        "title": "Nossos Serviços",
-        "cards": {
-          "bespokeInvestmentFacilitation": {
-            "title": "Facilitação de Investimentos Personalizados",
-            "description": "Orientação personalizada em oportunidades de investimento de altíssimo valor nos mercados do Sudeste Asiático, com acesso incomparável a ativos fora do mercado."
-          },
-          "discreetLegalRegulatoryNavigation": {
-            "title": "Navegação Legal e Regulatória Discreta",
-            "description": "Soluções confidenciais para estabelecimento e gestão de negócios sem interrupções no Sudeste Asiático, garantindo conformidade enquanto mantém privacidade absoluta."
-          },
-          "strategicPartnerships": {
-            "title": "Parcerias Estratégicas",
-            "description": "Aproveite nossa extensa rede de líderes da indústria, oficiais do governo e especialistas locais para forjar alianças poderosas que impulsionam o sucesso de seus investimentos no Sudeste Asiático."
-          },
-          "comprehensiveDueDiligence": {
-            "title": "Due Diligence Abrangente",
-            "description": "Análise e verificação minuciosas de oportunidades de investimento, garantindo que nossos clientes possuam todas as informações necessárias para tomar decisões informadas."
-          }
-        }
-      },
-      "benchmarkAchievements": {
-        "title": "Conquistas de Referência",
-        "description": "Na ATRIUM CONSULTANCY, medimos nosso sucesso pela escala e impacto dos projetos que facilitamos. Nossas conquistas de referência em setores-chave demonstram nossa capacidade de lidar com investimentos de alto valor e complexidade no Sudeste Asiático, sempre mantendo a máxima discrição e profissionalismo.",
-        "items": [
-          {
-            "title": "Grandes Aquisições de Infraestrutura",
-            "description": "Facilitação de aquisições estratégicas de ativos de infraestrutura excedendo US$500 milhões, navegando com sucesso em ambientes regulatórios complexos em vários países do Sudeste Asiático."
-          },
-          {
-            "title": "Expansão de Portfólio de Startups de Tecnologia",
-            "description": "Orientação para fundos soberanos na construção de portfólios de até US$200 milhões, focando em startups de tecnologia de alto crescimento em mercados emergentes do Sudeste Asiático."
-          },
-          {
-            "title": "Desenvolvimentos de Imóveis de Luxo",
-            "description": "Orquestração de joint ventures para desenvolvimentos de resorts de luxo avaliados em mais de US$750 milhões, unindo investidores internacionais com parceiros locais."
-          },
-          {
-            "title": "Transações de M&A Transfronteiriças",
-            "description": "Execução bem-sucedida de fusões e aquisições transfronteiriças totalizando mais de US$1 bilhão, simplificando integrações comerciais internacionais complexas."
-          },
-          {
-            "title": "Projetos de Energia Sustentável",
-            "description": "Facilitação de investimentos em energia renovável excedendo US$300 milhões, contribuindo para o desenvolvimento de infraestrutura sustentável no Sudeste Asiático."
-          },
-          {
-            "title": "Implementações de Tecnologia Avançada",
-            "description": "Orientação sobre integrações de tecnologias de IA e blockchain para entidades governamentais, resultando em melhorias de eficiência avaliadas em mais de US$100 milhões anualmente."
-          }
-        ]
-      },
-      "legalPrivacyCompliance": {
-        "title": "Conformidade Legal e de Privacidade",
-        "description": "Na ATRIUM CONSULTANCY, aderimos aos mais altos padrões de conformidade legal e de privacidade. Nossas operações estão totalmente em conformidade com regulamentações internacionais e leis locais em todas as jurisdições onde operamos. Implementamos medidas de proteção de dados de última geração para garantir a máxima confidencialidade das informações e transações de nossos clientes."
-      },
-      "callToAction": {
-        "title": "Pronto para Explorar Oportunidades Exclusivas?",
-        "description": "Deixe nossa equipe de consultores especializados guiá-lo através do cenário de investimento mais exclusivo do Sudeste Asiático. Experimente a diferença da ATRIUM CONSULTANCY.",
-        "button": "Solicitar uma Consulta Privada"
       }
+    },
+    "expertise": {
+      "title": "Nossa Expertise e Experiência",
+      "cards": {
+        "strategicAssetAcquisitions": {
+          "title": "Aquisições Estratégicas de Ativos",
+          "description": "Facilitando negócios de alto valor com discrição em todo o Sudeste Asiático. Nossa rede e expertise abrem portas para oportunidades exclusivas frequentemente ocultas do público.",
+          "achievements": [
+            "Orquestrou aquisições confidenciais em mais de 8 países",
+            "Desenvolveu uma rede exclusiva abrangendo mais de 15 países",
+            "Implementou estratégias proprietárias para transações sensíveis e de alto risco"
+          ]
+        },
+        "eliteAdvisoryServices": {
+          "title": "Serviços de Consultoria de Elite",
+          "description": "Fornecendo orientação incomparável para investimentos internacionais complexos. Nossos especialistas experientes navegam no cenário intrincado dos mercados do Sudeste Asiático com precisão e perspicácia.",
+          "achievements": [
+            "Conduziu negócios de investimento transfronteiriços para capitalistas de risco, facilitando a entrada em mercados de alto crescimento com avaliações precisas de risco",
+            "Elaborou estratégias personalizadas para diversos cenários culturais e regulatórios",
+            "Alcançou alta taxa de sucesso no fechamento de negócios complexos multijurisdicionais"
+          ]
+        }
+      }
+    },
+    "services": {
+      "title": "Nossos Serviços",
+      "cards": {
+        "bespokeInvestmentFacilitation": {
+          "title": "Facilitação de Investimentos Personalizados",
+          "description": "Orientação personalizada sobre oportunidades de investimento de ultra-alto valor nos mercados do Sudeste Asiático, com acesso incomparável a ativos fora do mercado."
+        },
+        "discreetLegalRegulatoryNavigation": {
+          "title": "Navegação Legal e Regulatória Discreta",
+          "description": "Soluções confidenciais para estabelecimento e gestão empresarial sem complicações no Sudeste Asiático, garantindo conformidade mantendo privacidade absoluta."
+        },
+        "strategicPartnerships": {
+          "title": "Parcerias Estratégicas",
+          "description": "Aproveite nossa extensa rede de líderes industriais, autoridades governamentais e especialistas locais para forjar alianças poderosas que impulsionam seus investimentos no Sudeste Asiático."
+        },
+        "comprehensiveDueDiligence": {
+          "title": "Due Diligence Abrangente",
+          "description": "Análise e avaliação minuciosa de oportunidades de investimento, garantindo que nossos clientes tenham todas as informações necessárias para tomar decisões informadas."
+        }
+      }
+    },
+    "benchmarkAchievements": {
+      "title": "Realizações de Referência",
+      "description": "Na ATRIUM CONSULTORIA, medimos nosso sucesso pela escala e impacto dos projetos que facilitamos. Nossas realizações de referência em setores-chave demonstram nossa capacidade de lidar com investimentos complexos e de alto valor no Sudeste Asiático, sempre mantendo a máxima discrição e profissionalismo.",
+      "items": [
+        {
+          "title": "Aquisições de Infraestrutura Principal",
+          "description": "Facilitação de aquisições estratégicas de infraestrutura, navegando com sucesso em ambientes regulatórios em múltiplos países do Sudeste Asiático."
+        },
+        {
+          "title": "Expansões de Portfólio de Startups de Tecnologia",
+          "description": "Orientação para fundos soberanos na construção de portfólios, focando em startups de tecnologia de alto crescimento em mercados emergentes do Sudeste Asiático."
+        },
+        {
+          "title": "Desenvolvimentos Imobiliários de Luxo",
+          "description": "Orquestração de joint ventures para desenvolvimentos de resorts de luxo unindo investidores internacionais com parceiros locais."
+        },
+        {
+          "title": "Transações de Fusões e Aquisições Transfronteiriças",
+          "description": "Execução bem-sucedida de fusões e aquisições transfronteiriças, simplificando integrações comerciais internacionais complexas."
+        },
+        {
+          "title": "Projetos de Energia Sustentável",
+          "description": "Facilitação de investimentos em energia renovável e desenvolvimento de infraestrutura sustentável no Sudeste Asiático."
+        },
+        {
+          "title": "Implementações de Tecnologia Avançada",
+          "description": "Orientação sobre integrações de tecnologia de IA e blockchain para entidades privadas."
+        }
+      ]
+    },
+    "legalPrivacyCompliance": {
+      "title": "Conformidade Legal e Privacidade",
+      "description": "Na ATRIUM CONSULTORIA, aderimos aos mais altos padrões de conformidade legal e privacidade. Nossas operações estão totalmente em conformidade com regulamentações internacionais e leis locais em todas as jurisdições onde operamos. Implementamos medidas de proteção de dados de última geração para garantir a máxima confidencialidade das informações e transações de nossos clientes."
+    },
+    "callToAction": {
+      "title": "Pronto para Explorar Oportunidades Exclusivas?",
+      "description": "Deixe nossa equipe de consultores especialistas guiá-lo pelo cenário de investimentos mais exclusivo do Sudeste Asiático. Experimente a diferença ATRIUM CONSULTORIA.",
+      "button": "Solicitar Consulta Privada"
     }
   }
-  
+}

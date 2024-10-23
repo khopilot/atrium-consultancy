@@ -1,86 +1,86 @@
 {
-    "services": {
-      "heroSection": {
-        "title": "Nossos Serviços",
-        "description": "Na ATRIUM CONSULTANCY LTD, oferecemos uma suíte de serviços personalizados projetados para navegar pelo complexo cenário de investimentos no Sudeste Asiático. Nossas ofertas são meticulosamente elaboradas para atender aos rigorosos padrões de nossa clientela de elite, proporcionando acesso e expertise inigualáveis em uma das regiões econômicas mais dinâmicas do mundo."
-      },
-      "investmentFacilitation": {
-        "title": "Facilitação de Investimentos Sob Medida",
-        "description": "Especializamo-nos em identificar e assegurar oportunidades de investimento exclusivas e de alto valor no Sudeste Asiático. Os profundos insights de mercado de nossa equipe e nossa extensa rede nos permitem descobrir joias ocultas antes que cheguem ao conhecimento público. Desde startups de tecnologia emergentes no vibrante ecossistema de Singapura até recursos naturais inexplorados no arquipélago da Indonésia, oferecemos aos nossos clientes vantagens de pioneirismo nos setores mais promissores da região.",
-        "servicesTitle": "Nossos serviços de facilitação de investimentos incluem:",
-        "servicesList": [
-          "Prospecção de negócios proprietária a partir de nossa rede exclusiva",
-          "Due diligence abrangente aproveitando a expertise local",
-          "Execução de transações sem falhas com máxima discrição",
-          "Suporte pós-investimento e otimização de valor"
-        ]
-      },
-      "strategicAdvisory": {
-        "title": "Serviços de Consultoria Estratégica",
-        "description": "No intrincado cenário de negócios do Sudeste Asiático, o conhecimento local é fundamental. Nossos serviços de consultoria estratégica oferecem um farol de clareza, orientando nossos clientes através das nuances de cada mercado.",
-        "servicesTitle": "Nós fornecemos:",
-        "servicesList": [
-          "Estratégias de entrada no mercado aprofundadas, adaptadas ao ecossistema único de cada país",
-          "Avaliação e planos de mitigação de riscos considerando fatores geopolíticos, econômicos e culturais",
-          "Inteligência competitiva e aconselhamento de posicionamento no mercado",
-          "Identificação e facilitação de parcerias estratégicas com potências locais"
-        ]
-      },
-      "additionalParagraphs": {
-        "paragraph1": "Na ATRIUM CONSULTANCY LTD, não apenas facilitamos transações; arquitetamos oportunidades. Nossos serviços são projetados para fornecer a você uma vantagem decisiva no competitivo cenário de investimentos do Sudeste Asiático. Combinamos as melhores práticas globais com insights locais sofisticados, garantindo que suas incursões nesta região dinâmica não sejam apenas bem-sucedidas, mas transformadoras.",
-        "paragraph2": "Em um mundo onde a informação é ubíqua, mas a verdadeira percepção é rara, nos posicionamos como seus parceiros de confiança, transformando o complexo em conquistável. Com a ATRIUM CONSULTANCY LTD, você não está apenas investindo no Sudeste Asiático; está moldando seu futuro enquanto garante o seu."
-      },
-      "opportunitiesSection": {
-        "title": "Seção de Oportunidades",
-        "cards": [
-          {
-            "icon": "Globo",
-            "title": "Acesso a Ativos Governamentais de Alto Valor",
-            "description": "Aproveite aquisições exclusivas de ativos governamentais com nossa orientação especializada. Beneficie-se de nossa profunda compreensão das regulamentações locais e das melhores práticas globais para assegurar negócios de alto valor com discrição e eficiência. Posicione-se para o sucesso em transações sensíveis que oferecem significativo potencial de crescimento.",
-            "ctaText": "Explore oportunidades de ativos governamentais",
-            "ctaLink": "#"
-          },
-          {
-            "icon": "Briefcase",
-            "title": "Ganhe uma Vantagem Competitiva nas Negociações",
-            "description": "Aproveite nossas décadas de experiência para garantir resultados favoráveis em seus investimentos internacionais. Beneficie-se de nossa orientação culturalmente sutil e específica ao contexto para navegar por parcerias transfronteiriças complexas. Maximize seu potencial de negociação desde a estratégia inicial até o fechamento de negócios.",
-            "ctaText": "Aprimore seu poder de negociação",
-            "ctaLink": "#"
-          },
-          {
-            "icon": "FileSearch",
-            "title": "Descubra Oportunidades de Mercado Ocultas",
-            "description": "Mantenha-se à frente com nossa due diligence abrangente e pesquisa de mercado. Obtenha insights acionáveis que combinam análise orientada por dados com inteligência de campo. Tome decisões informadas que mitigam riscos e capitalizam as dinâmicas oportunidades no mercado sul-asiático.",
-            "ctaText": "Descubra insights de mercado",
-            "ctaLink": "#"
-          },
-          {
-            "icon": "Building",
-            "title": "Maximize o Potencial de Investimento Imobiliário",
-            "description": "Capitaliza o crescente mercado imobiliário sul-asiático com nossas soluções imobiliárias completas. Otimize o desempenho dos ativos, assegure conformidade com as leis locais e identifique oportunidades lucrativas neste setor em rápido crescimento. Transforme desafios em empreendimentos lucrativos em toda a região.",
-            "ctaText": "Explore perspectivas imobiliárias",
-            "ctaLink": "#"
-          },
-          {
-            "icon": "TrendingUp",
-            "title": "Otimize Seus Retornos de Investimento",
-            "description": "Melhore seu desempenho financeiro com nossa análise aprofundada de retornos de investimento. Obtenha uma avaliação abrangente das perspectivas de curto e longo prazo, considerando tendências de mercado, fatores de risco e potencial de crescimento. Tome decisões orientadas por dados que maximizam retornos e alcançam seus objetivos financeiros no mercado sul-asiático.",
-            "ctaText": "Maximize seu potencial de investimento",
-            "ctaLink": "#"
-          },
-          {
-            "icon": "Users",
-            "title": "Expansão Sem Esforço nos Mercados Sul-Asiáticos",
-            "description": "Acelere o crescimento de seu negócio com nossos serviços de facilitação de residência e emprego. Navegue pelas complexidades de estabelecer sua presença no Sul da Ásia com facilidade. Concentre-se em suas atividades comerciais principais enquanto garantimos uma transição suave para você e seus funcionários neste mercado vibrante.",
-            "ctaText": "Simplifique sua entrada no mercado",
-            "ctaLink": "#"
-          }
-        ]
-      },
-      "callToActionSection": {
-        "title": "Pronto para Aproveitar Essas Oportunidades?",
-        "description": "Vamos discutir como você pode aproveitar nossa expertise para capitalizar o vasto potencial dos mercados sul-asiáticos e maximizar seus retornos de investimento.",
-        "buttonText": "Agende uma Sessão de Estratégia"
-      }
+  "services": {
+    "heroSection": {
+      "title": "Nossos Serviços",
+      "description": "Na ATRIUM CONSULTORIA LTDA, oferecemos uma série de serviços personalizados projetados para navegar pelo complexo cenário de investimentos no Sudeste Asiático. Nossas ofertas são meticulosamente elaboradas para atender aos exigentes padrões de nossa clientela, proporcionando acesso incomparável a uma das regiões mais dinâmicas do mundo."
+    },
+    "investmentFacilitation": {
+      "title": "Facilitação de Investimentos Personalizados",
+      "description": "Somos especializados em identificar e garantir investimentos exclusivos de alto valor em todo o Sudeste Asiático. O profundo conhecimento de mercado de nossa equipe nos permite descobrir oportunidades ocultas antes que se tornem públicas. De startups de tecnologia emergentes no vibrante ecossistema de Singapura a recursos naturais inexplorados no arquipélago da Indonésia, proporcionamos aos nossos clientes vantagens pioneiras nos setores mais promissores da região.",
+      "servicesTitle": "Nossos serviços de facilitação de investimentos abrangem:",
+      "servicesList": [
+        "Originação de negócios proprietários de nossa rede exclusiva",
+        "Due diligence abrangente aproveitando expertise local",
+        "Execução perfeita de transações com máxima discrição",
+        "Suporte pós-investimento e otimização de valor"
+      ]
+    },
+    "strategicAdvisory": {
+      "title": "Serviços de Consultoria Estratégica",
+      "description": "Na intrincada tapeçaria do Sudeste Asiático, o conhecimento local é fundamental. Nossos serviços estratégicos oferecem um farol de clareza, guiando nossos clientes através das nuances de cada mercado.",
+      "servicesTitle": "Fornecemos:",
+      "servicesList": [
+        "Estratégias aprofundadas adaptadas ao ecossistema único de cada país",
+        "Avaliação de riscos e planos de mitigação considerando fatores geopolíticos, econômicos e culturais",
+        "Inteligência competitiva e consultoria de posicionamento de mercado",
+        "Parcerias estratégicas e cooperação com potências locais"
+      ]
+    },
+    "additionalParagraphs": {
+      "paragraph1": "Na ATRIUM CONSULTORIA LTDA, não apenas facilitamos transações; arquitetamos oportunidades. Nossos serviços são projetados para fornecer uma vantagem decisiva no cenário de investimentos do Sudeste Asiático. Combinamos sua visão com insights locais nuançados, garantindo que suas incursões nesta região dinâmica não sejam apenas bem-sucedidas, mas transformadoras.",
+      "paragraph2": "Em um mundo onde a informação é ubíqua, mas o verdadeiro insight é raro, nos posicionamos como seus parceiros de confiança, transformando o complexo em conquistável. Com a ATRIUM CONSULTORIA LTDA, você não está apenas investindo no Sudeste Asiático; está moldando seu futuro enquanto garante o seu."
+    },
+    "opportunitiesSection": {
+      "title": "Seção de Oportunidades",
+      "cards": [
+        {
+          "icon": "Globe",
+          "title": "Acesso a Ativos Governamentais de Alto Valor",
+          "description": "Aproveite aquisições exclusivas de ativos governamentais com nossa orientação especializada. Beneficie-se de nossa profunda compreensão das regulamentações locais para garantir negócios de alto valor. Posicione-se para o sucesso em transações sensíveis que oferecem significativo potencial de crescimento.",
+          "ctaText": "Explore oportunidades de ativos governamentais",
+          "ctaLink": "#"
+        },
+        {
+          "icon": "Briefcase",
+          "title": "Obtenha Vantagem Competitiva em Negociações",
+          "description": "Aproveite nossas décadas de experiência para garantir resultados favoráveis em seus investimentos. Beneficie-se de nossa orientação culturalmente nuançada e contextual para navegar em parcerias transfronteiriças complexas. Maximize seu potencial de negociação desde a estratégia inicial até o fechamento de negócios.",
+          "ctaText": "Aumente seu poder de negociação",
+          "ctaLink": "#"
+        },
+        {
+          "icon": "FileSearch",
+          "title": "Descubra Oportunidades Ocultas de Mercado",
+          "description": "Mantenha-se à frente da curva com nossa due diligence abrangente e pesquisa de mercado. Obtenha insights acionáveis que combinam análise baseada em dados com inteligência local. Tome decisões informadas que mitigam riscos e capitalizam as oportunidades dinâmicas no mercado do Sudeste Asiático.",
+          "ctaText": "Descubra insights de mercado",
+          "ctaLink": "#"
+        },
+        {
+          "icon": "Building",
+          "title": "Maximize o Potencial de Investimento Imobiliário",
+          "description": "Capitalize no mercado imobiliário em expansão do Sul da Ásia com nossas soluções imobiliárias completas. Otimize o desempenho de ativos, garanta conformidade com leis locais e identifique oportunidades lucrativas neste setor em rápido crescimento. Transforme desafios em empreendimentos rentáveis em toda a região.",
+          "ctaText": "Explore perspectivas imobiliárias",
+          "ctaLink": "#"
+        },
+        {
+          "icon": "TrendingUp",
+          "title": "Otimize seus Retornos de Investimento",
+          "description": "Aprimore seu desempenho financeiro com nossa análise aprofundada de retorno sobre investimento. Obtenha uma avaliação abrangente das perspectivas de curto e longo prazo, considerando tendências de mercado, fatores de risco e potencial de crescimento. Tome decisões baseadas em dados que maximizam retornos e alcançam seus objetivos financeiros.",
+          "ctaText": "Maximize seu potencial de investimento",
+          "ctaLink": "#"
+        },
+        {
+          "icon": "Users",
+          "title": "Expansão Perfeita para Mercados do Sul da Ásia",
+          "description": "Acelere seu crescimento empresarial com nossos serviços de residência e emprego. Navegue pelo mistério de estabelecer sua presença no Sul da Ásia com facilidade. Concentre-se em suas atividades principais enquanto garantimos uma transição suave para você e seus funcionários neste mercado vibrante.",
+          "ctaText": "Simplifique sua entrada no mercado",
+          "ctaLink": "#"
+        }
+      ]
+    },
+    "callToActionSection": {
+      "title": "Pronto para Aproveitar Essas Oportunidades?",
+      "description": "Vamos discutir como combinar nossa expertise com seu potencial para maximizar retornos de investimento.",
+      "buttonText": "Agende uma Sessão Estratégica"
     }
   }
+}
